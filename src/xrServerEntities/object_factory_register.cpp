@@ -100,6 +100,30 @@
 #include "Scope.h"
 #include "Silencer.h"
 #include "GrenadeLauncher.h"
+#include "Grip.h"
+#include "Fgrips.h"
+#include "Barrel.h"
+#include "Chargs.h"
+#include "Bipods.h"
+#include "Chargh.h"
+#include "Flight.h"
+#include "Gblock.h"
+#include "Hguard.h"
+#include "Magazn.h"
+
+#include "Mounts.h"
+#include "Muzzle.h"
+#include "Rcievr.h"
+#include "Sights.h"
+#include "Sightf.h"
+#include "Sightr.h"
+#include "Sight2.h"
+#include "Stocks.h"
+#include "Tacti1.h"
+#include "Adapt1.h"
+#include "Adapt2.h"
+#include "Laserr.h"
+
 
 #include "Bolt.h"
 #include "medkit.h"
@@ -313,8 +337,30 @@ void CObjectFactory::register_classes()
     //-----------------------------------------------------------------------------------------------------
 
     // Weapons Add-on
-    ADD(CScope, CSE_ALifeItem, CLSID_OBJECT_W_SCOPE, "wpn_scope");
-    ADD(CSilencer, CSE_ALifeItem, CLSID_OBJECT_W_SILENCER, "wpn_silencer");
+    ADD(CScope, CSE_ALifeItem, TEXT2CLSID("W_SCOPE"), "wpn_scope");
+    ADD(CSilencer, CSE_ALifeItem, TEXT2CLSID("W_SILENCER"), "wpn_silencer");
+    ADD(CGrip, CSE_ALifeItem, TEXT2CLSID("W_GRIP"), "wpn_grip");
+    ADD(CFgrips, CSE_ALifeItem, TEXT2CLSID("W_GRIP"), "wpn_fgrips");
+    ADD(CBarrel, CSE_ALifeItem, TEXT2CLSID("W_BARREL"), "wpn_barrel");
+    ADD(CChargs, CSE_ALifeItem, TEXT2CLSID("W_CHARGS"), "wpn_chargs");
+    ADD(CBipods, CSE_ALifeItem, TEXT2CLSID("W_BIPODS"), "wpn_bipods");
+    ADD(CChargh, CSE_ALifeItem, TEXT2CLSID("W_CHARGH"), "wpn_chargh");
+    ADD(CFlight, CSE_ALifeItem, TEXT2CLSID("W_FLIGHT"), "wpn_flight");
+    ADD(CGblock, CSE_ALifeItem, TEXT2CLSID("W_GBLOCK"), "wpn_gblock");
+    ADD(CHguard, CSE_ALifeItem, TEXT2CLSID("W_HGUARD"), "wpn_hguard");
+    ADD(CMagazn, CSE_ALifeItem, TEXT2CLSID("W_MAGAZN"), "wpn_magazn");
+    ADD(CMuzzle, CSE_ALifeItem, TEXT2CLSID("W_MUZZLE"), "wpn_muzzle");
+    ADD(CRcievr, CSE_ALifeItem, TEXT2CLSID("W_RCIEVR"), "wpn_rcievr");
+    ADD(CSights, CSE_ALifeItem, TEXT2CLSID("W_SIGHTS"), "wpn_sights");
+    ADD(CSightf, CSE_ALifeItem, TEXT2CLSID("W_SIGHTF"), "wpn_sightf");
+    ADD(CSightr, CSE_ALifeItem, TEXT2CLSID("W_SIGHTR"), "wpn_sightr");
+    ADD(CSight2, CSE_ALifeItem, TEXT2CLSID("W_SIGHT2"), "wpn_sight2");
+    ADD(CStocks, CSE_ALifeItem, TEXT2CLSID("W_STOCKS"), "wpn_stocks");
+    ADD(CTacti1, CSE_ALifeItem, TEXT2CLSID("W_TACTI1"), "wpn_tacti1");
+    ADD(CAdapt1, CSE_ALifeItem, TEXT2CLSID("W_ADAPT1"), "wpn_adapt1");
+    ADD(CAdapt2, CSE_ALifeItem, TEXT2CLSID("W_ADAPT2"), "wpn_adapt2");
+    ADD(CLaserr, CSE_ALifeItem, TEXT2CLSID("W_LASERR"), "wpn_laserr");
+
     ADD(CGrenadeLauncher, CSE_ALifeItem, CLSID_OBJECT_W_GLAUNCHER, "wpn_grenade_launcher");
 
     // Inventory

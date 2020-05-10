@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -33,7 +33,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <Import Project="$(SolutionDir)Common.props" />
   <PropertyGroup Label="Globals">
-    <WindowsTargetPlatformVersion>$(xrTargetPlatform)</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -313,6 +313,7 @@
     <ClInclude Include="actor_mp_state_inline.h" />
     <ClInclude Include="actor_statistic_defs.h" />
     <ClInclude Include="actor_statistic_mgr.h" />
+    <ClInclude Include="Adapt1.h" />
     <ClInclude Include="AdvancedDetector.h" />
     <ClInclude Include="agent_corpse_manager.h" />
     <ClInclude Include="agent_corpse_manager_inline.h" />
@@ -760,6 +761,7 @@
     <ClInclude Include="autosave_manager.h" />
     <ClInclude Include="autosave_manager_inline.h" />
     <ClInclude Include="awards_store.h" />
+    <ClInclude Include="Barrel.h" />
     <ClInclude Include="base_client_classes_wrappers.h" />
     <ClInclude Include="BastArtifact.h" />
     <ClInclude Include="best_scores_helper.h" />
@@ -792,6 +794,7 @@
     <ClInclude Include="character_rank.h" />
     <ClInclude Include="character_reputation.h" />
     <ClInclude Include="character_shell_control.h" />
+    <ClInclude Include="Chargs.h" />
     <ClInclude Include="client_spawn_manager.h" />
     <ClInclude Include="client_spawn_manager_inline.h" />
     <ClInclude Include="ClimableObject.h" />
@@ -887,6 +890,7 @@
     <ClInclude Include="F1.h" />
     <ClInclude Include="FadedBall.h" />
     <ClInclude Include="faster_than_bullets_time.h" />
+    <ClInclude Include="Fgrips.h" />
     <ClInclude Include="filereceiver_node.h" />
     <ClInclude Include="filetransfer_common.h" />
     <ClInclude Include="filetransfer_node.h" />
@@ -945,18 +949,25 @@
     <ClInclude Include="game_sv_single.h" />
     <ClInclude Include="game_sv_teamdeathmatch.h" />
     <ClInclude Include="game_type.h" />
+    <ClInclude Include="Gblock.h" />
     <ClInclude Include="GlobalFeelTouch.hpp" />
     <ClInclude Include="GraviArtifact.h" />
     <ClInclude Include="GraviZone.h" />
     <ClInclude Include="Grenade.h" />
     <ClInclude Include="GrenadeLauncher.h" />
+    <ClInclude Include="Grip.h" />
     <ClInclude Include="group_hierarchy_holder.h" />
     <ClInclude Include="group_hierarchy_holder_inline.h" />
     <ClInclude Include="gsc_dsigned_ltx.h" />
     <ClInclude Include="HairsZone.h" />
     <ClInclude Include="HangingLamp.h" />
     <ClInclude Include="harvest_time.h" />
+    <ClInclude Include="Bipods.h" />
+    <ClInclude Include="Chargh.h" />
+    <ClInclude Include="Flight.h" />
+    <ClInclude Include="Adapt2.h" />
     <ClInclude Include="helicopter.h" />
+    <ClInclude Include="Hguard.h" />
     <ClInclude Include="Hit.h" />
     <ClInclude Include="HitMarker.h" />
     <ClInclude Include="hits_store.h" />
@@ -1028,6 +1039,7 @@
     <ClInclude Include="killer_victim_velocity_angle.h" />
     <ClInclude Include="kills_store.h" />
     <ClInclude Include="kills_store_inline.h" />
+    <ClInclude Include="Laserr.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LevelGraphDebugRender.hpp" />
     <ClInclude Include="Level_Bullet_Manager.h" />
@@ -1044,6 +1056,7 @@
     <ClInclude Include="location_manager.h" />
     <ClInclude Include="location_manager_inline.h" />
     <ClInclude Include="login_manager.h" />
+    <ClInclude Include="Magazn.h" />
     <ClInclude Include="magic_box3.h" />
     <ClInclude Include="magic_box3_inline.h" />
     <ClInclude Include="magic_minimize_1d.h" />
@@ -1077,6 +1090,7 @@
     <ClInclude Include="mixed_delegate_unique_tags.h" />
     <ClInclude Include="monster_community.h" />
     <ClInclude Include="MosquitoBald.h" />
+    <ClInclude Include="Mounts.h" />
     <ClInclude Include="movement_manager.h" />
     <ClInclude Include="movement_manager_impl.h" />
     <ClInclude Include="movement_manager_inline.h" />
@@ -1090,6 +1104,7 @@
     <ClInclude Include="MPPlayersBag.h" />
     <ClInclude Include="mp_config_sections.h" />
     <ClInclude Include="mt_config.h" />
+    <ClInclude Include="Muzzle.h" />
     <ClInclude Include="Needles.h" />
     <ClInclude Include="NET_Queue.h" />
     <ClInclude Include="NoGravityZone.h" />
@@ -1196,6 +1211,7 @@
     <ClInclude Include="rat_state_manager.h" />
     <ClInclude Include="rat_state_manager_inline.h" />
     <ClInclude Include="raypick.h" />
+    <ClInclude Include="Rcievr.h" />
     <ClInclude Include="refreshable_obstacles_query.h" />
     <ClInclude Include="refreshable_obstacles_query_inline.h" />
     <ClInclude Include="RegistryFuncs.h" />
@@ -1287,6 +1303,10 @@
     <ClInclude Include="setup_manager.h" />
     <ClInclude Include="setup_manager_inline.h" />
     <ClInclude Include="ShootingObject.h" />
+    <ClInclude Include="Sight2.h" />
+    <ClInclude Include="Sightf.h" />
+    <ClInclude Include="Sightr.h" />
+    <ClInclude Include="Sights.h" />
     <ClInclude Include="sight_action.h" />
     <ClInclude Include="sight_action_inline.h" />
     <ClInclude Include="sight_control_action.h" />
@@ -1440,7 +1460,9 @@
     <ClInclude Include="steering_behaviour_separation.h" />
     <ClInclude Include="step_manager.h" />
     <ClInclude Include="step_manager_defs.h" />
+    <ClInclude Include="Stocks.h" />
     <ClInclude Include="string_table.h" />
+    <ClInclude Include="Tacti1.h" />
     <ClInclude Include="team_base_zone.h" />
     <ClInclude Include="team_hierarchy_holder.h" />
     <ClInclude Include="team_hierarchy_holder_inline.h" />
@@ -1850,6 +1872,8 @@
     <ClCompile Include="Actor_Sleep.cpp" />
     <ClCompile Include="actor_statistic_mgr.cpp" />
     <ClCompile Include="Actor_Weapon.cpp" />
+    <ClCompile Include="Adapt1.cpp" />
+    <ClCompile Include="Adapt2.cpp" />
     <ClCompile Include="AdvancedDetector.cpp" />
     <ClCompile Include="agent_corpse_manager.cpp" />
     <ClCompile Include="agent_enemy_manager.cpp">
@@ -2256,6 +2280,7 @@
     <ClCompile Include="BastArtifact.cpp" />
     <ClCompile Include="best_scores_helper.cpp" />
     <ClCompile Include="best_scores_store.cpp" />
+    <ClCompile Include="Bipods.cpp" />
     <ClCompile Include="BlackDrops.cpp" />
     <ClCompile Include="BlackGraviArtifact.cpp" />
     <ClCompile Include="black_list.cpp" />
@@ -2305,6 +2330,8 @@
     <ClCompile Include="character_rank.cpp" />
     <ClCompile Include="character_reputation.cpp" />
     <ClCompile Include="character_shell_control.cpp" />
+    <ClCompile Include="Chargh.cpp" />
+    <ClCompile Include="Chargs.cpp" />
     <ClCompile Include="client_spawn_manager.cpp">
       <PrecompiledHeaderFile>pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
@@ -2421,12 +2448,14 @@
     </ClCompile>
     <ClCompile Include="FadedBall.cpp" />
     <ClCompile Include="faster_than_bullets_time.cpp" />
+    <ClCompile Include="Fgrips.cpp" />
     <ClCompile Include="filereceiver_node.cpp" />
     <ClCompile Include="filetransfer_node.cpp" />
     <ClCompile Include="file_transfer.cpp" />
     <ClCompile Include="fire_disp_controller.cpp" />
     <ClCompile Include="first_bullet_controller.cpp" />
     <ClCompile Include="flare.cpp" />
+    <ClCompile Include="Flight.cpp" />
     <ClCompile Include="FoodItem.cpp" />
     <ClCompile Include="FryupZone.cpp" />
     <ClCompile Include="fs_registrator_script.cpp">
@@ -2540,11 +2569,13 @@
     <ClCompile Include="game_sv_teamdeathmatch.cpp" />
     <ClCompile Include="game_sv_teamdeathmatch_process_event.cpp" />
     <ClCompile Include="game_type.cpp" />
+    <ClCompile Include="Gblock.cpp" />
     <ClCompile Include="GlobalFeelTouch.cpp" />
     <ClCompile Include="GraviArtifact.cpp" />
     <ClCompile Include="GraviZone.cpp" />
     <ClCompile Include="Grenade.cpp" />
     <ClCompile Include="GrenadeLauncher.cpp" />
+    <ClCompile Include="Grip.cpp" />
     <ClCompile Include="group_hierarchy_holder.cpp" />
     <ClCompile Include="gsc_dsigned_ltx.cpp" />
     <ClCompile Include="HairsZone.cpp">
@@ -2577,6 +2608,7 @@
       <PrecompiledHeaderFile>pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClCompile Include="Hguard.cpp" />
     <ClCompile Include="Hit.cpp" />
     <ClCompile Include="HitMarker.cpp" />
     <ClCompile Include="hits_store.cpp" />
@@ -2683,6 +2715,7 @@
     </ClCompile>
     <ClCompile Include="killer_victim_velocity_angle.cpp" />
     <ClCompile Include="kills_store.cpp" />
+    <ClCompile Include="Laserr.cpp" />
     <ClCompile Include="Level.cpp">
       <PrecompiledHeaderFile>pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
@@ -2726,6 +2759,7 @@
     <ClCompile Include="location_manager.cpp" />
     <ClCompile Include="login_manager.cpp" />
     <ClCompile Include="login_manager_script.cpp" />
+    <ClCompile Include="Magazn.cpp" />
     <ClCompile Include="magic_box3.cpp" />
     <ClCompile Include="magic_minimize_1d.cpp" />
     <ClCompile Include="MainMenu.cpp" />
@@ -2761,6 +2795,7 @@
       <PrecompiledHeaderFile>pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClCompile Include="Mounts.cpp" />
     <ClCompile Include="movement_manager.cpp">
       <PrecompiledHeaderFile>pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
@@ -2781,6 +2816,7 @@
     <ClCompile Include="mpactor_dump_impl.cpp" />
     <ClCompile Include="MPPlayersBag.cpp" />
     <ClCompile Include="mp_config_sections.cpp" />
+    <ClCompile Include="Muzzle.cpp" />
     <ClCompile Include="Needles.cpp" />
     <ClCompile Include="NoGravityZone.cpp" />
     <ClCompile Include="object_actions.cpp" />
@@ -2919,6 +2955,7 @@
     <ClCompile Include="rat_state_base.cpp" />
     <ClCompile Include="rat_state_manager.cpp" />
     <ClCompile Include="raypick.cpp" />
+    <ClCompile Include="Rcievr.cpp" />
     <ClCompile Include="RegistryFuncs.cpp" />
     <ClCompile Include="relation_registry.cpp" />
     <ClCompile Include="relation_registry_actions.cpp">
@@ -3138,6 +3175,10 @@
     <ClCompile Include="server_entity_wrapper.cpp" />
     <ClCompile Include="ShootingObject.cpp" />
     <ClCompile Include="shootingObject_dump_impl.cpp" />
+    <ClCompile Include="Sight2.cpp" />
+    <ClCompile Include="Sightf.cpp" />
+    <ClCompile Include="Sightr.cpp" />
+    <ClCompile Include="Sights.cpp" />
     <ClCompile Include="sight_action.cpp" />
     <ClCompile Include="sight_manager.cpp" />
     <ClCompile Include="sight_manager_target.cpp" />
@@ -3222,6 +3263,7 @@
       <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
     <ClCompile Include="sound_player.cpp" />
+    <ClCompile Include="Barrel.cpp" />
     <ClCompile Include="space_restriction.cpp" />
     <ClCompile Include="space_restriction_base.cpp" />
     <ClCompile Include="space_restriction_bridge.cpp" />
@@ -3377,7 +3419,9 @@
     </ClCompile>
     <ClCompile Include="steering_behaviour.cpp" />
     <ClCompile Include="step_manager.cpp" />
+    <ClCompile Include="Stocks.cpp" />
     <ClCompile Include="string_table.cpp" />
+    <ClCompile Include="Tacti1.cpp" />
     <ClCompile Include="team_base_zone.cpp" />
     <ClCompile Include="team_hierarchy_holder.cpp" />
     <ClCompile Include="TeleWhirlwind.cpp" />

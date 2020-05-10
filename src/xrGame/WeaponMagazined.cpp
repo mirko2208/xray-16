@@ -3,9 +3,32 @@
 #include "WeaponMagazined.h"
 #include "Actor.h"
 #include "ParticlesObject.h"
-#include "Scope.h"
 #include "Silencer.h"
+#include "Chargs.h"
+#include "Chargh.h"
+#include "Flight.h"
+#include "Fgrips.h"
+#include "Gblock.h"
+#include "Hguard.h"
+#include "Magazn.h"
+#include "Mounts.h"
+#include "Muzzle.h"
+#include "Rcievr.h"
+#include "Sights.h"
+#include "Sightf.h"
+#include "Sightr.h"
+#include "Sight2.h"
+#include "Stocks.h"
+#include "Tacti1.h"
+#include "Adapt1.h"
+#include "Adapt2.h"
+#include "Laserr.h"
+
+#include "Bipods.h"
+#include "Scope.h"
 #include "GrenadeLauncher.h"
+#include "Barrel.h"
+#include "Grip.h"
 #include "Inventory.h"
 #include "InventoryOwner.h"
 #include "xrServer_Objects_ALife_Items.h"
@@ -104,6 +127,8 @@ void CWeaponMagazined::Load(LPCSTR section)
             m_layered_sounds.LoadSound(section, "snd_silncer_shot_actor", "sndSilencerShotActor", false, m_eSoundShot);
         //-Alundaio
     }
+
+
 
     m_iBaseDispersionedBulletsCount = READ_IF_EXISTS(pSettings, r_u8, section, "base_dispersioned_bullets_count", 0);
     m_fBaseDispersionedBulletsSpeed =
@@ -838,6 +863,28 @@ bool CWeaponMagazined::CanAttach(PIItem pIItem)
     CScope* pScope = smart_cast<CScope*>(pIItem);
     CSilencer* pSilencer = smart_cast<CSilencer*>(pIItem);
     CGrenadeLauncher* pGrenadeLauncher = smart_cast<CGrenadeLauncher*>(pIItem);
+    CGrip* pGrip = smart_cast<CGrip*>(pIItem);
+    CBarrel* pBarrel = smart_cast<CBarrel*>(pIItem);
+    CBipods* pBipods = smart_cast<CBipods*>(pIItem);
+    CChargs* pChargs = smart_cast<CChargs*>(pIItem);
+    CChargh* pChargh = smart_cast<CChargh*>(pIItem);
+    CFlight* pFlight = smart_cast<CFlight*>(pIItem);
+    CFgrips* pFgrips = smart_cast<CFgrips*>(pIItem);
+    CGblock* pGblock = smart_cast<CGblock*>(pIItem);
+    CHguard* pHguard = smart_cast<CHguard*>(pIItem);
+    CMagazn* pMagazn = smart_cast<CMagazn*>(pIItem);
+    CMounts* pMounts = smart_cast<CMounts*>(pIItem);
+    CMuzzle* pMuzzle = smart_cast<CMuzzle*>(pIItem);
+    CRcievr* pRcievr = smart_cast<CRcievr*>(pIItem);
+    CSights* pSights = smart_cast<CSights*>(pIItem);
+    CSightf* pSightf = smart_cast<CSightf*>(pIItem);
+    CSightr* pSightr = smart_cast<CSightr*>(pIItem);
+    CSight2* pSight2 = smart_cast<CSight2*>(pIItem);
+    CStocks* pStocks = smart_cast<CStocks*>(pIItem);
+    CTacti1* pTacti1 = smart_cast<CTacti1*>(pIItem);
+    CAdapt1* pAdapt1 = smart_cast<CAdapt1*>(pIItem);
+    CAdapt2* pAdapt2 = smart_cast<CAdapt2*>(pIItem);
+    CLaserr* pLaserr = smart_cast<CLaserr*>(pIItem);
 
     if (pScope && m_eScopeStatus == ALife::eAddonAttachable &&
         (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonScope) == 0 /*&&
@@ -854,6 +901,94 @@ bool CWeaponMagazined::CanAttach(PIItem pIItem)
     else if (pSilencer && m_eSilencerStatus == ALife::eAddonAttachable &&
         (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSilencer) == 0 &&
         (m_sSilencerName == pIItem->object().cNameSect()))
+        return true;
+    else if (pGrip && m_eGripStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGrip) == 0 &&
+        (m_sGripName == pIItem->object().cNameSect()))
+        return true;
+    else if (pBarrel && m_eBarrelStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBarrel) == 0 &&
+        (m_sBarrelName == pIItem->object().cNameSect()))
+        return true;
+    else if (pBipods && m_eBipodsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBipods) == 0 &&
+        (m_sBipodsName == pIItem->object().cNameSect()))
+        return true;
+    else if (pChargs && m_eChargsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargs) == 0 &&
+        (m_sChargsName == pIItem->object().cNameSect()))
+        return true;
+    else if (pChargh && m_eCharghStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargh) == 0 &&
+        (m_sCharghName == pIItem->object().cNameSect()))
+        return true;
+    else if (pFlight && m_eFlightStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFlight) == 0 &&
+        (m_sFlightName == pIItem->object().cNameSect()))
+        return true;
+    else if (pFgrips && m_eFgripsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFgrips) == 0 &&
+        (m_sFgripsName == pIItem->object().cNameSect()))
+        return true;
+    else if (pGblock && m_eGblockStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGblock) == 0 &&
+        (m_sGblockName == pIItem->object().cNameSect()))
+        return true;
+    else if (pHguard && m_eHguardStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonHguard) == 0 &&
+        (m_sHguardName == pIItem->object().cNameSect()))
+        return true;
+    else if (pMagazn && m_eMagaznStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMagazn) == 0 &&
+        (m_sMagaznName == pIItem->object().cNameSect()))
+        return true;
+    else if (pMounts && m_eMountsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMounts) == 0 &&
+        (m_sMountsName == pIItem->object().cNameSect()))
+        return true;
+    else if (pMuzzle && m_eMuzzleStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMuzzle) == 0 &&
+        (m_sMuzzleName == pIItem->object().cNameSect()))
+        return true;
+    else if (pRcievr && m_eRcievrStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonRcievr) == 0 &&
+        (m_sRcievrName == pIItem->object().cNameSect()))
+        return true;
+    else if (pSights && m_eSightsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSights) == 0 &&
+        (m_sSightsName == pIItem->object().cNameSect()))
+        return true;
+    else if (pSightf && m_eSightfStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightf) == 0 &&
+        (m_sSightfName == pIItem->object().cNameSect()))
+        return true;
+    else if (pSightr && m_eSightrStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightr) == 0 &&
+        (m_sSightrName == pIItem->object().cNameSect()))
+        return true;
+    else if (pSight2 && m_eSight2Status == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSight2) == 0 &&
+        (m_sSight2Name == pIItem->object().cNameSect()))
+        return true;
+    else if (pStocks && m_eStocksStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonStocks) == 0 &&
+        (m_sStocksName == pIItem->object().cNameSect()))
+        return true;
+    else if (pTacti1 && m_eTacti1Status == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonTacti1) == 0 &&
+        (m_sTacti1Name == pIItem->object().cNameSect()))
+        return true;
+    else if (pAdapt1 && m_eAdapt1Status == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt1) == 0 &&
+        (m_sAdapt1Name == pIItem->object().cNameSect()))
+        return true;
+    else if (pAdapt2 && m_eAdapt2Status == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt2) == 0 &&
+        (m_sAdapt2Name == pIItem->object().cNameSect()))
+        return true;
+    else if (pLaserr && m_eLaserrStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaserr) == 0 &&
+        (m_sLaserrName == pIItem->object().cNameSect()))
         return true;
     else if (pGrenadeLauncher && m_eGrenadeLauncherStatus == ALife::eAddonAttachable &&
         (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGrenadeLauncher) == 0 &&
@@ -881,6 +1016,72 @@ bool CWeaponMagazined::CanDetach(const char* item_section_name)
     else if (m_eSilencerStatus == ALife::eAddonAttachable &&
         0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSilencer) && (m_sSilencerName == item_section_name))
         return true;
+    else if (m_eGripStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGrip) && (m_sGripName == item_section_name))
+        return true;
+    else if (m_eBarrelStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBarrel) && (m_sBarrelName == item_section_name))
+        return true;
+    else if (m_eBipodsStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBipods) && (m_sBipodsName == item_section_name))
+        return true;
+    else if (m_eChargsStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargs) && (m_sChargsName == item_section_name))
+        return true;
+    else if (m_eCharghStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargh) && (m_sCharghName == item_section_name))
+        return true;
+    else if (m_eFlightStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFlight) && (m_sFlightName == item_section_name))
+        return true;
+    else if (m_eFgripsStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFgrips) && (m_sFgripsName == item_section_name))
+        return true;
+    else if (m_eGblockStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGblock) && (m_sGblockName == item_section_name))
+        return true;
+    else if (m_eHguardStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonHguard) && (m_sHguardName == item_section_name))
+        return true;
+    else if (m_eMagaznStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMagazn) && (m_sMagaznName == item_section_name))
+        return true;
+    else if (m_eMountsStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMounts) && (m_sMountsName == item_section_name))
+        return true;
+    else if (m_eMuzzleStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMuzzle) && (m_sMuzzleName == item_section_name))
+        return true;
+    else if (m_eRcievrStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonRcievr) && (m_sRcievrName == item_section_name))
+        return true;
+    else if (m_eSightsStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSights) && (m_sSightsName == item_section_name))
+        return true;
+    else if (m_eSightfStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightf) && (m_sSightfName == item_section_name))
+        return true;
+    else if (m_eSightrStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightr) && (m_sSightrName == item_section_name))
+        return true;
+    else if (m_eSight2Status == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSight2) && (m_sSight2Name == item_section_name))
+        return true;
+    else if (m_eStocksStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonStocks) && (m_sStocksName == item_section_name))
+        return true;
+    else if (m_eTacti1Status == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonTacti1) && (m_sTacti1Name == item_section_name))
+        return true;
+    else if (m_eAdapt1Status == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt1) && (m_sAdapt1Name == item_section_name))
+        return true;
+    else if (m_eAdapt2Status == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt2) && (m_sAdapt2Name == item_section_name))
+        return true;
+    else if (m_eLaserrStatus == ALife::eAddonAttachable &&
+        0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaserr) && (m_sLaserrName == item_section_name))
+        return true;
     else if (m_eGrenadeLauncherStatus == ALife::eAddonAttachable &&
         0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGrenadeLauncher) &&
         (m_sGrenadeLauncherName == item_section_name))
@@ -896,7 +1097,28 @@ bool CWeaponMagazined::Attach(PIItem pIItem, bool b_send_event)
     CScope* pScope = smart_cast<CScope*>(pIItem);
     CSilencer* pSilencer = smart_cast<CSilencer*>(pIItem);
     CGrenadeLauncher* pGrenadeLauncher = smart_cast<CGrenadeLauncher*>(pIItem);
-
+    CGrip* pGrip = smart_cast<CGrip*>(pIItem);
+    CBarrel* pBarrel = smart_cast<CBarrel*>(pIItem);
+    CBipods* pBipods = smart_cast<CBipods*>(pIItem);
+    CChargs* pChargs = smart_cast<CChargs*>(pIItem);
+    CChargh* pChargh = smart_cast<CChargh*>(pIItem);
+    CFlight* pFlight = smart_cast<CFlight*>(pIItem);
+    CFgrips* pFgrips = smart_cast<CFgrips*>(pIItem);
+    CGblock* pGblock = smart_cast<CGblock*>(pIItem);
+    CHguard* pHguard = smart_cast<CHguard*>(pIItem);
+    CMagazn* pMagazn = smart_cast<CMagazn*>(pIItem);
+    CMounts* pMounts = smart_cast<CMounts*>(pIItem);
+    CMuzzle* pMuzzle = smart_cast<CMuzzle*>(pIItem);
+    CRcievr* pRcievr = smart_cast<CRcievr*>(pIItem);
+    CSights* pSights = smart_cast<CSights*>(pIItem);
+    CSightf* pSightf = smart_cast<CSightf*>(pIItem);
+    CSightr* pSightr = smart_cast<CSightr*>(pIItem);
+    CSight2* pSight2 = smart_cast<CSight2*>(pIItem);
+    CStocks* pStocks = smart_cast<CStocks*>(pIItem);
+    CTacti1* pTacti1 = smart_cast<CTacti1*>(pIItem);
+    CAdapt1* pAdapt1 = smart_cast<CAdapt1*>(pIItem);
+    CAdapt2* pAdapt2 = smart_cast<CAdapt2*>(pIItem);
+    CLaserr* pLaserr = smart_cast<CLaserr*>(pIItem);
     if (pScope && m_eScopeStatus == ALife::eAddonAttachable &&
         (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonScope) == 0 /*&&
        (m_scopes[cur_scope]->m_sScopeName == pIItem->object().cNameSect())*/)
@@ -915,6 +1137,160 @@ bool CWeaponMagazined::Attach(PIItem pIItem, bool b_send_event)
         (m_sSilencerName == pIItem->object().cNameSect()))
     {
         m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonSilencer;
+        result = true;
+    }
+    else if (pBarrel && m_eBarrelStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBarrel) == 0 &&
+        (m_sBarrelName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonBarrel;
+        result = true;
+    }
+    else if (pBipods && m_eBipodsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBipods) == 0 &&
+        (m_sBipodsName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonBipods;
+        result = true;
+    }
+    else if (pChargs && m_eBipodsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBipods) == 0 &&
+        (m_sChargsName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonBipods;
+        result = true;
+    }
+    else if (pGrip && m_eGripStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGrip) == 0 &&
+        (m_sGripName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonGrip;
+        result = true;
+    }
+    else if (pChargh && m_eCharghStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargh) == 0 &&
+        (m_sCharghName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonChargh;
+        result = true;
+    }
+    else if (pFlight && m_eFlightStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFlight) == 0 &&
+        (m_sFlightName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonFlight;
+        result = true;
+    }
+    else if (pFgrips && m_eFgripsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFgrips) == 0 &&
+        (m_sFgripsName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonFgrips;
+        result = true;
+    }
+    else if (pGblock && m_eGblockStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGblock) == 0 &&
+        (m_sGblockName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonGblock;
+        result = true;
+    }
+    else if (pHguard && m_eHguardStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonHguard) == 0 &&
+        (m_sHguardName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonHguard;
+        result = true;
+    }
+    else if (pMagazn && m_eMagaznStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMagazn) == 0 &&
+        (m_sMagaznName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonMagazn;
+        result = true;
+    }
+    else if (pMounts && m_eMountsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMounts) == 0 &&
+        (m_sMountsName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonMounts;
+        result = true;
+    }
+    else if (pMuzzle && m_eMuzzleStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMuzzle) == 0 &&
+        (m_sMuzzleName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonMuzzle;
+        result = true;
+    }
+    else if (pRcievr && m_eRcievrStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonRcievr) == 0 &&
+        (m_sRcievrName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonRcievr;
+        result = true;
+    }
+    else if (pSights && m_eSightsStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSights) == 0 &&
+        (m_sSightsName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonSights;
+        result = true;
+    }
+    else if (pSightf && m_eSightfStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightf) == 0 &&
+        (m_sSightfName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonSightf;
+        result = true;
+    }
+    else if (pSightr && m_eSightrStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightr) == 0 &&
+        (m_sSightrName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonSightr;
+        result = true;
+    }
+    else if (pSight2 && m_eSight2Status == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSight2) == 0 &&
+        (m_sSight2Name == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonSight2;
+        result = true;
+    }
+    else if (pStocks && m_eStocksStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonStocks) == 0 &&
+        (m_sStocksName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonStocks;
+        result = true;
+    }
+    else if (pTacti1 && m_eTacti1Status == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonTacti1) == 0 &&
+        (m_sTacti1Name == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonTacti1;
+        result = true;
+    }
+    else if (pAdapt1 && m_eAdapt1Status == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt1) == 0 &&
+        (m_sAdapt1Name == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonAdapt1;
+        result = true;
+    }
+    else if (pAdapt2 && m_eAdapt2Status == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt2) == 0 &&
+        (m_sAdapt2Name == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonAdapt2;
+        result = true;
+    }
+    else if (pLaserr && m_eLaserrStatus == ALife::eAddonAttachable &&
+        (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaserr) == 0 &&
+        (m_sLaserrName == pIItem->object().cNameSect()))
+    {
+        m_flagsAddOnState |= CSE_ALifeItemWeapon::eWeaponAddonLaserr;
         result = true;
     }
     else if (pGrenadeLauncher && m_eGrenadeLauncherStatus == ALife::eAddonAttachable &&
@@ -983,6 +1359,292 @@ bool CWeaponMagazined::Detach(const char* item_section_name, bool b_spawn_item)
             return true;
         }
         m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonSilencer;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eGripStatus == ALife::eAddonAttachable && (m_sGripName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGrip) == 0)
+        {
+            Msg("ERROR: grip addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonGrip;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eBarrelStatus == ALife::eAddonAttachable && (m_sBarrelName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBarrel) == 0)
+        {
+            Msg("ERROR: barrel addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonBarrel;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eBipodsStatus == ALife::eAddonAttachable && (m_sBipodsName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBipods) == 0)
+        {
+            Msg("ERROR: bipod addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonBipods;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eChargsStatus == ALife::eAddonAttachable && (m_sChargsName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargs) == 0)
+        {
+            Msg("ERROR: charges addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonChargs;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eCharghStatus == ALife::eAddonAttachable && (m_sCharghName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargh) == 0)
+        {
+            Msg("ERROR: chargehandle addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonChargs;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eFlightStatus == ALife::eAddonAttachable && (m_sFlightName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFlight) == 0)
+        {
+            Msg("ERROR: flashlight addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonFlight;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eFgripsStatus == ALife::eAddonAttachable && (m_sFgripsName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFgrips) == 0)
+        {
+            Msg("ERROR: foregrip addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonFgrips;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eGblockStatus == ALife::eAddonAttachable && (m_sGblockName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGblock) == 0)
+        {
+            Msg("ERROR: gasblock addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonGblock;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eHguardStatus == ALife::eAddonAttachable && (m_sHguardName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonHguard) == 0)
+        {
+            Msg("ERROR: handguard addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonHguard;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eMagaznStatus == ALife::eAddonAttachable && (m_sMagaznName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMagazn) == 0)
+        {
+            Msg("ERROR: magazine addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonMagazn;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eMountsStatus == ALife::eAddonAttachable && (m_sMountsName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMounts) == 0)
+        {
+            Msg("ERROR: mount addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonMounts;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eMuzzleStatus == ALife::eAddonAttachable && (m_sMuzzleName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMuzzle) == 0)
+        {
+            Msg("ERROR: muzzle addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonMuzzle;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eRcievrStatus == ALife::eAddonAttachable && (m_sRcievrName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonRcievr) == 0)
+        {
+            Msg("ERROR: reciever addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonRcievr;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eSightsStatus == ALife::eAddonAttachable && (m_sSightsName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSights) == 0)
+        {
+            Msg("ERROR: sight addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonSights;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eSightfStatus == ALife::eAddonAttachable && (m_sSightfName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightf) == 0)
+        {
+            Msg("ERROR: frontsight addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonSightf;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eSightrStatus == ALife::eAddonAttachable && (m_sSightrName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightr) == 0)
+        {
+            Msg("ERROR: rearsight addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonSightr;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eSight2Status == ALife::eAddonAttachable && (m_sSight2Name == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSight2) == 0)
+        {
+            Msg("ERROR: sight2 addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonSight2;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eStocksStatus == ALife::eAddonAttachable && (m_sStocksName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonStocks) == 0)
+        {
+            Msg("ERROR: stocks addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonStocks;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eTacti1Status == ALife::eAddonAttachable && (m_sTacti1Name == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonTacti1) == 0)
+        {
+            Msg("ERROR: tacticaldevice addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonTacti1;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eAdapt1Status == ALife::eAddonAttachable && (m_sAdapt1Name == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt1) == 0)
+        {
+            Msg("ERROR: adapter addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonAdapt1;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eAdapt2Status == ALife::eAddonAttachable && (m_sAdapt2Name == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt2) == 0)
+        {
+            Msg("ERROR: adapter2 addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonAdapt2;
+
+        UpdateAddonsVisibility();
+        InitAddons();
+        return CInventoryItemObject::Detach(item_section_name, b_spawn_item);
+    }
+    else if (m_eLaserrStatus == ALife::eAddonAttachable && (m_sLaserrName == item_section_name))
+    {
+        if ((m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaserr) == 0)
+        {
+            Msg("ERROR: laser addon already detached.");
+            return true;
+        }
+        m_flagsAddOnState &= ~CSE_ALifeItemWeapon::eWeaponAddonLaserr;
 
         UpdateAddonsVisibility();
         InitAddons();

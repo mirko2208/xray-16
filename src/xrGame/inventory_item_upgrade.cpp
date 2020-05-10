@@ -225,6 +225,86 @@ void CInventoryItem::pre_install_upgrade()
         {
             weapon->Detach(weapon->GetSilencerName().c_str(), true);
         }
+        if (weapon->GripAttachable() && weapon->IsGripAttached())
+        {
+            weapon->Detach(weapon->GetGripName().c_str(), true);
+        }
+        if (weapon->BarrelAttachable() && weapon->IsBarrelAttached())
+        {
+            weapon->Detach(weapon->GetBarrelName().c_str(), true);
+        }
+        if (weapon->ChargsAttachable() && weapon->IsChargsAttached())
+        {
+            weapon->Detach(weapon->GetChargsName().c_str(), true);
+        }
+        if (weapon->FlightAttachable() && weapon->IsFlightAttached())
+        {
+            weapon->Detach(weapon->GetFlightName().c_str(), true);
+        }
+        if (weapon->FgripsAttachable() && weapon->IsFgripsAttached())
+        {
+            weapon->Detach(weapon->GetFgripsName().c_str(), true);
+        }
+        if (weapon->GblockAttachable() && weapon->IsGblockAttached())
+        {
+            weapon->Detach(weapon->GetGblockName().c_str(), true);
+        }
+        if (weapon->HguardAttachable() && weapon->IsHguardAttached())
+        {
+            weapon->Detach(weapon->GetHguardName().c_str(), true);
+        }
+        if (weapon->MagaznAttachable() && weapon->IsMagaznAttached())
+        {
+            weapon->Detach(weapon->GetMagaznName().c_str(), true);
+        }
+        if (weapon->MountsAttachable() && weapon->IsMountsAttached())
+        {
+            weapon->Detach(weapon->GetMountsName().c_str(), true);
+        }
+        if (weapon->MuzzleAttachable() && weapon->IsMuzzleAttached())
+        {
+            weapon->Detach(weapon->GetMuzzleName().c_str(), true);
+        }
+        if (weapon->RcievrAttachable() && weapon->IsRcievrAttached())
+        {
+            weapon->Detach(weapon->GetRcievrName().c_str(), true);
+        }
+        if (weapon->SightsAttachable() && weapon->IsSightsAttached())
+        {
+            weapon->Detach(weapon->GetSightsName().c_str(), true);
+        }
+        if (weapon->SightfAttachable() && weapon->IsSightfAttached())
+        {
+            weapon->Detach(weapon->GetSightfName().c_str(), true);
+        }
+        if (weapon->SightrAttachable() && weapon->IsSightrAttached())
+        {
+            weapon->Detach(weapon->GetSightrName().c_str(), true);
+        }
+        if (weapon->Sight2Attachable() && weapon->IsSight2Attached())
+        {
+            weapon->Detach(weapon->GetSight2Name().c_str(), true);
+        }
+        if (weapon->StocksAttachable() && weapon->IsStocksAttached())
+        {
+            weapon->Detach(weapon->GetStocksName().c_str(), true);
+        }
+        if (weapon->Tacti1Attachable() && weapon->IsTacti1Attached())
+        {
+            weapon->Detach(weapon->GetTacti1Name().c_str(), true);
+        }
+        if (weapon->Adapt1Attachable() && weapon->IsAdapt1Attached())
+        {
+            weapon->Detach(weapon->GetAdapt1Name().c_str(), true);
+        }
+        if (weapon->Adapt2Attachable() && weapon->IsAdapt2Attached())
+        {
+            weapon->Detach(weapon->GetAdapt2Name().c_str(), true);
+        }
+        if (weapon->LaserrAttachable() && weapon->IsLaserrAttached())
+        {
+            weapon->Detach(weapon->GetLaserrName().c_str(), true);
+        }
         if (weapon->GrenadeLauncherAttachable() && weapon->IsGrenadeLauncherAttached())
         {
             weapon->Detach(weapon->GetGrenadeLauncherName().c_str(), true);

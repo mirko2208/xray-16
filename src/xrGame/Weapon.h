@@ -126,6 +126,7 @@ public:
     BOOL AutoSpawnAmmo() const { return m_bAutoSpawnAmmo; };
     bool IsTriStateReload() const { return m_bTriStateReload; }
     EWeaponSubStates GetReloadState() const { return (EWeaponSubStates)m_sub_state; }
+
 protected:
     bool m_bTriStateReload;
 
@@ -141,14 +142,81 @@ public:
     bool IsGrenadeLauncherAttached() const;
     bool IsScopeAttached() const;
     bool IsSilencerAttached() const;
+    bool IsBarrelAttached() const;
+    bool IsBipodsAttached() const;
+    bool IsChargsAttached() const;
+    bool IsCharghAttached() const;
+    bool IsFlightAttached() const;
+    bool IsFgripsAttached() const;
+    bool IsGripAttached() const;
+    bool IsGblockAttached() const;
+    bool IsHguardAttached() const;
+    bool IsMagaznAttached() const;
+    bool IsMountsAttached() const;
+    bool IsMuzzleAttached() const;
+    bool IsRcievrAttached() const;
+    bool IsSightsAttached() const;
+    bool IsSightfAttached() const;
+    bool IsSightrAttached() const;
+    bool IsSight2Attached() const;
+    bool IsStocksAttached() const;
+    bool IsTacti1Attached() const;
+    bool IsAdapt1Attached() const;
+    bool IsAdapt2Attached() const;
+    bool IsLaserrAttached() const;
 
     virtual bool GrenadeLauncherAttachable();
     virtual bool ScopeAttachable();
     virtual bool SilencerAttachable();
+    virtual bool BarrelAttachable();
+    virtual bool BipodsAttachable();
+    virtual bool ChargsAttachable();
+    virtual bool CharghAttachable();
+    virtual bool FlightAttachable();
+    virtual bool FgripsAttachable();
+    virtual bool GblockAttachable();
+    virtual bool HguardAttachable();
+    virtual bool MagaznAttachable();
+    virtual bool MountsAttachable();
+    virtual bool MuzzleAttachable();
+    virtual bool RcievrAttachable();
+    virtual bool SightsAttachable();
+    virtual bool SightfAttachable();
+    virtual bool SightrAttachable();
+    virtual bool Sight2Attachable();
+    virtual bool StocksAttachable();
+    virtual bool Tacti1Attachable();
+    virtual bool Adapt1Attachable();
+    virtual bool Adapt2Attachable();
+    virtual bool LaserrAttachable();
+    virtual bool GripAttachable();
+    
 
     ALife::EWeaponAddonStatus get_GrenadeLauncherStatus() const { return m_eGrenadeLauncherStatus; }
     ALife::EWeaponAddonStatus get_ScopeStatus() const { return m_eScopeStatus; }
     ALife::EWeaponAddonStatus get_SilencerStatus() const { return m_eSilencerStatus; }
+    ALife::EWeaponAddonStatus get_BarrelStatus() const { return m_eBarrelStatus; }
+    ALife::EWeaponAddonStatus get_BipodsStatus() const { return m_eBipodsStatus; }
+    ALife::EWeaponAddonStatus get_ChargsStatus() const { return m_eChargsStatus; }
+    ALife::EWeaponAddonStatus get_CharghStatus() const { return m_eCharghStatus; }
+    ALife::EWeaponAddonStatus get_FlightStatus() const { return m_eFlightStatus; }
+    ALife::EWeaponAddonStatus get_FgripsStatus() const { return m_eFgripsStatus; }
+    ALife::EWeaponAddonStatus get_GblockStatus() const { return m_eGblockStatus; }
+    ALife::EWeaponAddonStatus get_HguardStatus() const { return m_eHguardStatus; }
+    ALife::EWeaponAddonStatus get_MagaznStatus() const { return m_eMagaznStatus; }
+    ALife::EWeaponAddonStatus get_MountsStatus() const { return m_eMountsStatus; }
+    ALife::EWeaponAddonStatus get_MuzzleStatus() const { return m_eMuzzleStatus; }
+    ALife::EWeaponAddonStatus get_RcievrStatus() const { return m_eRcievrStatus; }
+    ALife::EWeaponAddonStatus get_SightsStatus() const { return m_eSightsStatus; }
+    ALife::EWeaponAddonStatus get_SightfStatus() const { return m_eSightfStatus; }
+    ALife::EWeaponAddonStatus get_SightrStatus() const { return m_eSightrStatus; }
+    ALife::EWeaponAddonStatus get_Sight2Status() const { return m_eSight2Status; }
+    ALife::EWeaponAddonStatus get_StocksStatus() const { return m_eStocksStatus; }
+    ALife::EWeaponAddonStatus get_Tacti1Status() const { return m_eTacti1Status; }
+    ALife::EWeaponAddonStatus get_Adapt1Status() const { return m_eAdapt1Status; }
+    ALife::EWeaponAddonStatus get_Adapt2Status() const { return m_eAdapt2Status; }
+    ALife::EWeaponAddonStatus get_LaserrStatus() const { return m_eLaserrStatus; }
+    ALife::EWeaponAddonStatus get_GripStatus() const { return m_eGripStatus; }
     virtual bool UseScopeTexture() { return true; };
     //обновление видимости для косточек аддонов
     void UpdateAddonsVisibility();
@@ -159,13 +227,79 @@ public:
     //для отоброажения иконок апгрейдов в интерфейсе
     int GetScopeX() { return pSettings->r_s32(m_scopes[m_cur_scope], "scope_x"); }
     int GetScopeY() { return pSettings->r_s32(m_scopes[m_cur_scope], "scope_y"); }
-    int GetSilencerX() { return m_iSilencerX; }
+    int GetSilencerX() { return m_iSilencerY; }
     int GetSilencerY() { return m_iSilencerY; }
+    int GetBarrelY() { return m_iBarrelY; }
+    int GetBarrelX() { return m_iBarrelX; }
+    int GetBipodsX() { return m_iBipodsX; }
+    int GetBipodsY() { return m_iBipodsY; }
+    int GetChargsX() { return m_iChargsX; }
+    int GetChargsY() { return m_iChargsY; }
+    int GetCharghY() { return m_iCharghY; }
+    int GetCharghX() { return m_iCharghX; }
+    int GetFlightY() { return m_iFlightY; }
+    int GetFlightX() { return m_iFlightX; }
+    int GetFgripsY() { return m_iFgripsY; }
+    int GetFgripsX() { return m_iFgripsX; }
+    int GetGblockX() { return m_iGblockX; }
+    int GetGblockY() { return m_iGblockY; }
+    int GetHguardY() { return m_iHguardY; }
+    int GetHguardX() { return m_iHguardX; }
+    int GetMagaznY() { return m_iMagaznY; }
+    int GetMagaznX() { return m_iMagaznX; }
+    int GetMountsX() { return m_iMountsX; }
+    int GetMountsY() { return m_iMountsY; }
+    int GetMuzzleX() { return m_iMuzzleX; }
+    int GetMuzzleY() { return m_iMuzzleY; }
+    int GetRcievrY() { return m_iRcievrY; }
+    int GetRcievrX() { return m_iRcievrX; }
+    int GetSightsX() { return m_iSightsX; }
+    int GetSightsY() { return m_iSightsY; }
+    int GetSightfY() { return m_iSightfY; }
+    int GetSightfX() { return m_iSightfX; }
+    int GetSightrX() { return m_iSightrX; }
+    int GetSightrY() { return m_iSightrY; }
+    int GetSight2Y() { return m_iSight2Y; }
+    int GetSight2X() { return m_iSight2X; }
+    int GetStocksX() { return m_iStocksY; }
+    int GetStocksY() { return m_iStocksY; }
+    int GetTacti1Y() { return m_iTacti1Y; }
+    int GetTacti1X() { return m_iTacti1X; }
+    int GetAdapt1Y() { return m_iAdapt1Y; }
+    int GetAdapt1X() { return m_iAdapt1X; }
+    int GetAdapt2Y() { return m_iAdapt2Y; }
+    int GetAdapt2X() { return m_iAdapt2X; }
+    int GetLaserrY() { return m_iLaserrY; }
+    int GetLaserrX() { return m_iLaserrX; }
     int GetGrenadeLauncherX() { return m_iGrenadeLauncherX; }
     int GetGrenadeLauncherY() { return m_iGrenadeLauncherY; }
+    int GetGripX() { return m_iGripY; }
+    int GetGripY() { return m_iGripX; }
     const shared_str& GetGrenadeLauncherName() const { return m_sGrenadeLauncherName; }
     const shared_str GetScopeName() const { return pSettings->r_string(m_scopes[m_cur_scope], "scope_name"); }
+    const shared_str& GetBarrelName() const { return m_sBarrelName; }
     const shared_str& GetSilencerName() const { return m_sSilencerName; }
+    const shared_str& GetBipodsName() const { return m_sBipodsName; }
+    const shared_str& GetChargsName() const { return m_sChargsName; }
+    const shared_str& GetCharghName() const { return m_sCharghName; }
+    const shared_str& GetFlightName() const { return m_sFlightName; }
+    const shared_str& GetFgripsName() const { return m_sFgripsName; }
+    const shared_str& GetGblockName() const { return m_sGblockName; }
+    const shared_str& GetHguardName() const { return m_sHguardName; }
+    const shared_str& GetMagaznName() const { return m_sMagaznName; }
+    const shared_str& GetMountsName() const { return m_sMountsName; }
+    const shared_str& GetMuzzleName() const { return m_sMuzzleName; }
+    const shared_str& GetRcievrName() const { return m_sRcievrName; }
+    const shared_str& GetSightsName() const { return m_sSightsName; }
+    const shared_str& GetSightfName() const { return m_sSightfName; }
+    const shared_str& GetSightrName() const { return m_sSightrName; }
+    const shared_str& GetSight2Name() const { return m_sSight2Name; }
+    const shared_str& GetStocksName() const { return m_sStocksName; }
+    const shared_str& GetTacti1Name() const { return m_sTacti1Name; }
+    const shared_str& GetAdapt1Name() const { return m_sAdapt1Name; }
+    const shared_str& GetAdapt2Name() const { return m_sAdapt2Name; }
+    const shared_str& GetLaserrName() const { return m_sLaserrName; }
+    const shared_str& GetGripName() const { return m_sGripName; }
     IC void ForceUpdateAmmo() { m_BriefInfo_CalcFrame = 0; }
     u8 GetAddonsState() const { return m_flagsAddOnState; };
     void SetAddonsState(u8 st) { m_flagsAddOnState = st; } // dont use!!! for buy menu only!!!
@@ -177,16 +311,84 @@ protected:
     ALife::EWeaponAddonStatus m_eScopeStatus;
     ALife::EWeaponAddonStatus m_eSilencerStatus;
     ALife::EWeaponAddonStatus m_eGrenadeLauncherStatus;
+    ALife::EWeaponAddonStatus m_eGripStatus;
+    ALife::EWeaponAddonStatus m_eBarrelStatus;
+    ALife::EWeaponAddonStatus m_eBipodsStatus;
+    ALife::EWeaponAddonStatus m_eChargsStatus;
+    ALife::EWeaponAddonStatus m_eCharghStatus;
+    ALife::EWeaponAddonStatus m_eFlightStatus;
+    ALife::EWeaponAddonStatus m_eFgripsStatus;
+    ALife::EWeaponAddonStatus m_eGblockStatus;
+    ALife::EWeaponAddonStatus m_eHguardStatus;
+    ALife::EWeaponAddonStatus m_eMagaznStatus;
+    ALife::EWeaponAddonStatus m_eMountsStatus;
+    ALife::EWeaponAddonStatus m_eMuzzleStatus;
+    ALife::EWeaponAddonStatus m_eRcievrStatus;
+    ALife::EWeaponAddonStatus m_eSightsStatus;
+    ALife::EWeaponAddonStatus m_eSightfStatus;
+    ALife::EWeaponAddonStatus m_eSightrStatus;
+    ALife::EWeaponAddonStatus m_eSight2Status;
+    ALife::EWeaponAddonStatus m_eStocksStatus;
+    ALife::EWeaponAddonStatus m_eTacti1Status;
+    ALife::EWeaponAddonStatus m_eAdapt1Status;
+    ALife::EWeaponAddonStatus m_eAdapt2Status;
+    ALife::EWeaponAddonStatus m_eLaserrStatus;
 
     //названия секций подключаемых аддонов
     shared_str m_sScopeName;
     shared_str m_sSilencerName;
     shared_str m_sGrenadeLauncherName;
+    shared_str m_sGripName;
+    shared_str m_sBarrelName;
+    shared_str m_sBipodsName;
+    shared_str m_sChargsName;
+    shared_str m_sCharghName;
+    shared_str m_sFlightName;
+    shared_str m_sFgripsName;
+    shared_str m_sGblockName;
+    shared_str m_sHguardName;
+    shared_str m_sMagaznName;
+    shared_str m_sMountsName;
+    shared_str m_sMuzzleName;
+    shared_str m_sRcievrName;
+    shared_str m_sSightsName;
+    shared_str m_sSightfName;
+    shared_str m_sSightrName;
+    shared_str m_sSight2Name;
+    shared_str m_sStocksName;
+    shared_str m_sTacti1Name;
+    shared_str m_sAdapt1Name;
+    shared_str m_sAdapt2Name;
+    shared_str m_sLaserrName;
+
 
     //смещение иконов апгрейдов в инвентаре
     int m_iScopeX, m_iScopeY;
     int m_iSilencerX, m_iSilencerY;
     int m_iGrenadeLauncherX, m_iGrenadeLauncherY;
+    int m_iGripX, m_iGripY;
+    int m_iBipodsX, m_iBipodsY;
+    int m_iBarrelX, m_iBarrelY;
+    int m_iChargsX, m_iChargsY;
+    int m_iCharghX, m_iCharghY;
+    int m_iFlightX, m_iFlightY;
+    int m_iFgripsX, m_iFgripsY;
+    int m_iGblockX, m_iGblockY;
+    int m_iHguardX, m_iHguardY;
+    int m_iMagaznX, m_iMagaznY;
+    int m_iMountsX, m_iMountsY;
+    int m_iMuzzleX, m_iMuzzleY;
+    int m_iRcievrX, m_iRcievrY;
+    int m_iSightsX, m_iSightsY;
+    int m_iSightfX, m_iSightfY;
+    int m_iSightrX, m_iSightrY;
+    int m_iSight2X, m_iSight2Y;
+    int m_iStocksX, m_iStocksY;
+    int m_iTacti1X, m_iTacti1Y;
+    int m_iAdapt1X, m_iAdapt1Y;
+    int m_iAdapt2X, m_iAdapt2Y;
+    int m_iLaserrX, m_iLaserrY;
+
 
 protected:
     struct SZoomParams
@@ -241,11 +443,13 @@ public:
 public:
     virtual EHandDependence HandDependence() const { return eHandDependence; }
     bool IsSingleHanded() const { return m_bIsSingleHanded; }
+
 public:
     IC LPCSTR strap_bone0() const { return m_strap_bone0; }
     IC LPCSTR strap_bone1() const { return m_strap_bone1; }
     IC void strapped_mode(bool value) { m_strapped_mode = value; }
     IC bool strapped_mode() const { return m_strapped_mode; }
+
 protected:
     LPCSTR m_strap_bone0;
     LPCSTR m_strap_bone1;
@@ -370,6 +574,7 @@ protected:
 public:
     float GetMisfireStartCondition() const { return misfireStartCondition; };
     float GetMisfireEndCondition() const { return misfireEndCondition; };
+
 protected:
     struct SPDM
     {
@@ -405,7 +610,7 @@ protected:
     CParticlesObject* m_pFlameParticles2;
 
 protected:
-    int GetAmmoCount(u8 ammo_type) const;
+    int GetAmmoCount(u32 ammo_type) const;
 
 public:
     IC int GetAmmoElapsed() const { return /*int(m_magazine.size())*/ iAmmoElapsed; }
@@ -425,6 +630,7 @@ public:
     virtual float Get_PDM_Crouch_NA() const { return m_pdm.m_fPDM_disp_crouch_no_acc; };
     virtual float GetCrosshairInertion() const { return m_crosshair_inertion; };
     float GetFirstBulletDisp() const { return m_first_bullet_controller.get_fire_dispertion(); };
+
 protected:
     int iAmmoElapsed; // ammo in magazine, currently
     int iMagazineSize; // size (in bullets) of magazine
@@ -479,7 +685,7 @@ public:
     virtual u32 ef_main_weapon_type() const;
     virtual u32 ef_weapon_type() const;
 
-    //Alundaio
+    // Alundaio
     int GetAmmoCount_forType(shared_str const& ammo_type) const;
     virtual void set_ef_main_weapon_type(u32 type) { m_ef_main_weapon_type = type; };
     virtual void set_ef_weapon_type(u32 type) { m_ef_weapon_type = type; };

@@ -2254,6 +2254,9 @@
     <Filter Include="UI\Multiplayer\MM_MP\VersionList">
       <UniqueIdentifier>{04c90fd3-e247-4f21-b715-8dc556986837}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Addons\Grip">
+      <UniqueIdentifier>{a4dde52d-500f-4991-9589-5771370b8262}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mt_config.h">
@@ -6504,6 +6507,30 @@
     <ClInclude Include="ui\UIArtefactPanel.h">
       <Filter>UI\Common\MainIngame</Filter>
     </ClInclude>
+    <ClInclude Include="Grip.h">
+      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Addons\Grip</Filter>
+    </ClInclude>
+    <ClInclude Include="Adapt1.h" />
+    <ClInclude Include="Barrel.h" />
+    <ClInclude Include="Chargs.h" />
+    <ClInclude Include="Fgrips.h" />
+    <ClInclude Include="Gblock.h" />
+    <ClInclude Include="Bipods.h" />
+    <ClInclude Include="Chargh.h" />
+    <ClInclude Include="Flight.h" />
+    <ClInclude Include="Adapt2.h" />
+    <ClInclude Include="Hguard.h" />
+    <ClInclude Include="Laserr.h" />
+    <ClInclude Include="Magazn.h" />
+    <ClInclude Include="Mounts.h" />
+    <ClInclude Include="Muzzle.h" />
+    <ClInclude Include="Rcievr.h" />
+    <ClInclude Include="Sight2.h" />
+    <ClInclude Include="Sightf.h" />
+    <ClInclude Include="Sightr.h" />
+    <ClInclude Include="Sights.h" />
+    <ClInclude Include="Stocks.h" />
+    <ClInclude Include="Tacti1.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="damage_manager.cpp">
@@ -8306,9 +8333,6 @@
     <ClCompile Include="ShootingObject.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Weapon Generic</Filter>
     </ClCompile>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Weapon Generic</Filter>
-    </ClCompile>
     <ClCompile Include="WeaponDispersion.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Weapon Generic</Filter>
     </ClCompile>
@@ -8335,9 +8359,6 @@
     </ClCompile>
     <ClCompile Include="Scope.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Addons\Scope</Filter>
-    </ClCompile>
-    <ClCompile Include="Silencer.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Addons\Silencer</Filter>
     </ClCompile>
     <ClCompile Include="GrenadeLauncher.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Addons\GrenadeLauncher</Filter>
@@ -9874,6 +9895,36 @@
     </ClCompile>
     <ClCompile Include="ui\UIArtefactPanel.cpp">
       <Filter>UI\Common\MainIngame</Filter>
+    </ClCompile>
+    <ClCompile Include="Silencer.cpp">
+      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Addons\Silencer</Filter>
+    </ClCompile>
+    <ClCompile Include="Grip.cpp">
+      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Addons\Grip</Filter>
+    </ClCompile>
+    <ClCompile Include="Adapt1.cpp" />
+    <ClCompile Include="Adapt2.cpp" />
+    <ClCompile Include="Bipods.cpp" />
+    <ClCompile Include="Chargh.cpp" />
+    <ClCompile Include="Chargs.cpp" />
+    <ClCompile Include="Fgrips.cpp" />
+    <ClCompile Include="Flight.cpp" />
+    <ClCompile Include="Gblock.cpp" />
+    <ClCompile Include="Hguard.cpp" />
+    <ClCompile Include="Laserr.cpp" />
+    <ClCompile Include="Magazn.cpp" />
+    <ClCompile Include="Mounts.cpp" />
+    <ClCompile Include="Muzzle.cpp" />
+    <ClCompile Include="Rcievr.cpp" />
+    <ClCompile Include="Sight2.cpp" />
+    <ClCompile Include="Sightf.cpp" />
+    <ClCompile Include="Sightr.cpp" />
+    <ClCompile Include="Sights.cpp" />
+    <ClCompile Include="Barrel.cpp" />
+    <ClCompile Include="Stocks.cpp" />
+    <ClCompile Include="Tacti1.cpp" />
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Core\Client\Objects\actor\base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

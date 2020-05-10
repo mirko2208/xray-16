@@ -272,7 +272,23 @@ bool CWeapon::install_upgrade_addon(LPCSTR section, bool test)
 
     result |= result2;
 
-    temp_int = (int)m_eSilencerStatus;
+    temp_int = (int)m_eGripStatus;
+    result2 = process_if_exists_set(section, "grip_status", &CInifile::r_s32, temp_int, test);
+    if (result2 && !test)
+    {
+        m_eGripStatus = (ALife::EWeaponAddonStatus)temp_int;
+        if (m_eGripStatus == ALife::eAddonAttachable || m_eGripStatus == ALife::eAddonPermanent)
+        {
+            m_sGripName = pSettings->r_string(section, "grip_name");
+            m_iGripX = pSettings->r_s32(section, "grip_x");
+            m_iGripY = pSettings->r_s32(section, "grip_y");
+            if (m_eGripStatus == ALife::eAddonPermanent)
+                InitAddons();
+        }
+    }
+    result |= result2;
+
+        temp_int = (int)m_eSilencerStatus;
     result2 = process_if_exists_set(section, "silencer_status", &CInifile::r_s32, temp_int, test);
     if (result2 && !test)
     {

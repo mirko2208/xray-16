@@ -417,6 +417,28 @@ void CWeapon::Load(LPCSTR section)
     // информация о возможных апгрейдах и их визуализации в инвентаре
     m_eScopeStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "scope_status");
     m_eSilencerStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "silencer_status");
+    m_eBarrelStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "barrel_status");
+    m_eBipodsStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "bipods_status");
+    m_eChargsStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "chargs_status");
+    m_eCharghStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "chargh_status");
+    m_eFlightStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "flight_status");
+    m_eFgripsStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "fgrips_status");
+    m_eGripStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "grip_status");
+    m_eGblockStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "gblock_status");
+    m_eHguardStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "hguard_status");
+    m_eMagaznStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "magazn_status");
+    m_eMountsStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "mounts_status");
+    m_eMuzzleStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "muzzle_status");
+    m_eRcievrStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "rcievr_status");
+    m_eSightsStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "sights_status");
+    m_eSightfStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "sightf_status");
+    m_eSightrStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "sightr_status");
+    m_eSight2Status = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "sight2_status");
+    m_eStocksStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "stocks_status");
+    m_eTacti1Status = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "tacti1_status");
+    m_eAdapt1Status = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "adapt1_status");
+    m_eAdapt2Status = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "adapt2_status");
+    m_eLaserrStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "laserr_status");
     m_eGrenadeLauncherStatus = (ALife::EWeaponAddonStatus)pSettings->r_s32(section, "grenade_launcher_status");
 
     m_zoom_params.m_bZoomEnabled = !!pSettings->r_bool(section, "zoom_enabled");
@@ -457,6 +479,34 @@ void CWeapon::Load(LPCSTR section)
         m_iSilencerY = pSettings->r_s32(section, "silencer_y");
     }
 
+    
+    if (m_eBarrelStatus == ALife::eAddonAttachable)
+    {
+        m_sBarrelName = pSettings->r_string(section, "barrel_name");
+        m_iBarrelX = pSettings->r_s32(section, "barrel_x");
+        m_iBarrelY = pSettings->r_s32(section, "barrel_y");
+    }
+
+    if (m_eBipodsStatus == ALife::eAddonAttachable)
+    {
+        m_sBipodsName = pSettings->r_string(section, "bipods_name");
+        m_iBipodsX = pSettings->r_s32(section, "bipods_x");
+        m_iBipodsY = pSettings->r_s32(section, "bipods_y");
+    }
+
+    if (m_eChargsStatus == ALife::eAddonAttachable)
+    {
+        m_sChargsName = pSettings->r_string(section, "chargs_name");
+        m_iChargsX = pSettings->r_s32(section, "chargs_x");
+        m_iChargsY = pSettings->r_s32(section, "chargs_y");
+    }
+
+    if (m_eCharghStatus == ALife::eAddonAttachable)
+    {
+        m_sCharghName = pSettings->r_string(section, "chargh_name");
+        m_iCharghX = pSettings->r_s32(section, "chargh_x");
+        m_iCharghY = pSettings->r_s32(section, "chargh_y");
+    }
     if (m_eGrenadeLauncherStatus == ALife::eAddonAttachable)
     {
         m_sGrenadeLauncherName = pSettings->r_string(section, "grenade_launcher_name");
@@ -464,6 +514,122 @@ void CWeapon::Load(LPCSTR section)
         m_iGrenadeLauncherY = pSettings->r_s32(section, "grenade_launcher_y");
     }
 
+    if (m_eFlightStatus == ALife::eAddonAttachable)
+    {
+        m_sFlightName = pSettings->r_string(section, "flight_name");
+        m_iFlightX = pSettings->r_s32(section, "flight_x");
+        m_iFlightY = pSettings->r_s32(section, "flight_y");
+    }
+
+    if (m_eFgripsStatus == ALife::eAddonAttachable)
+    {
+        m_sFgripsName = pSettings->r_string(section, "fgrips_name");
+        m_iFgripsX = pSettings->r_s32(section, "fgrips_x");
+        m_iFgripsY = pSettings->r_s32(section, "fgrips_y");
+    }
+    if (m_eGblockStatus == ALife::eAddonAttachable)
+    {
+        m_sGblockName = pSettings->r_string(section, "gblock_name");
+        m_iGblockX = pSettings->r_s32(section, "gblock_x");
+        m_iGblockY = pSettings->r_s32(section, "gblock_y");
+    }
+
+    if (m_eHguardStatus == ALife::eAddonAttachable)
+    {
+        m_sHguardName = pSettings->r_string(section, "hguard_name");
+        m_iHguardX = pSettings->r_s32(section, "hguard_x");
+        m_iHguardY = pSettings->r_s32(section, "hguard_y");
+    }
+    if (m_eMagaznStatus == ALife::eAddonAttachable)
+    {
+        m_sMagaznName = pSettings->r_string(section, "magazn_name");
+        m_iMagaznX = pSettings->r_s32(section, "magazn_x");
+        m_iMagaznY = pSettings->r_s32(section, "magazn_y");
+    }
+
+    if (m_eMountsStatus == ALife::eAddonAttachable)
+    {
+        m_sMountsName = pSettings->r_string(section, "mounts_name");
+        m_iMountsX = pSettings->r_s32(section, "mounts_x");
+        m_iMountsY = pSettings->r_s32(section, "mounts_y");
+    }
+    if (m_eMuzzleStatus == ALife::eAddonAttachable)
+    {
+        m_sMuzzleName = pSettings->r_string(section, "muzzle_name");
+        m_iMuzzleX = pSettings->r_s32(section, "muzzle_x");
+        m_iMuzzleY = pSettings->r_s32(section, "muzzle_y");
+    }
+
+    if (m_eRcievrStatus == ALife::eAddonAttachable)
+    {
+        m_sRcievrName = pSettings->r_string(section, "rcievr_name");
+        m_iRcievrX = pSettings->r_s32(section, "rcievr_x");
+        m_iRcievrY = pSettings->r_s32(section, "rcievr_y");
+    }
+    if (m_eSightsStatus == ALife::eAddonAttachable)
+    {
+        m_sSightsName = pSettings->r_string(section, "sights_name");
+        m_iSightsX = pSettings->r_s32(section, "sights_x");
+        m_iSightsY = pSettings->r_s32(section, "sights_y");
+    }
+
+    if (m_eSightfStatus == ALife::eAddonAttachable)
+    {
+        m_sSightfName = pSettings->r_string(section, "sightf_name");
+        m_iSightfX = pSettings->r_s32(section, "sightf_x");
+        m_iSightfY = pSettings->r_s32(section, "sightf_y");
+    }
+    if (m_eSightrStatus == ALife::eAddonAttachable)
+    {
+        m_sSightrName = pSettings->r_string(section, "sightr_name");
+        m_iSightrX = pSettings->r_s32(section, "sightr_x");
+        m_iSightrY = pSettings->r_s32(section, "sightr_y");
+    }
+
+    if (m_eSight2Status == ALife::eAddonAttachable)
+    {
+        m_sSight2Name = pSettings->r_string(section, "sight2_name");
+        m_iSight2X = pSettings->r_s32(section, "sight2_x");
+        m_iSight2Y = pSettings->r_s32(section, "sight2_y");
+    }
+    if (m_eStocksStatus == ALife::eAddonAttachable)
+    {
+        m_sStocksName = pSettings->r_string(section, "stocks_name");
+        m_iStocksX = pSettings->r_s32(section, "stocks_x");
+        m_iStocksY = pSettings->r_s32(section, "stocks_y");
+    }
+    if (m_eTacti1Status == ALife::eAddonAttachable)
+    {
+        m_sTacti1Name = pSettings->r_string(section, "tacti1_name");
+        m_iTacti1X = pSettings->r_s32(section, "tacti1_x");
+        m_iTacti1Y = pSettings->r_s32(section, "tacti1_y");
+    }
+
+    if (m_eAdapt1Status == ALife::eAddonAttachable)
+    {
+        m_sAdapt1Name = pSettings->r_string(section, "adapt1_name");
+        m_iAdapt1X = pSettings->r_s32(section, "adapt1_x");
+        m_iAdapt1Y = pSettings->r_s32(section, "adapt1_y");
+    }
+    if (m_eAdapt2Status == ALife::eAddonAttachable)
+    {
+        m_sAdapt2Name = pSettings->r_string(section, "adapt2_name");
+        m_iAdapt2X = pSettings->r_s32(section, "adapt2_x");
+        m_iAdapt2Y = pSettings->r_s32(section, "adapt2_y");
+    }
+    if (m_eLaserrStatus == ALife::eAddonAttachable)
+    {
+        m_sLaserrName = pSettings->r_string(section, "laserr_name");
+        m_iLaserrX = pSettings->r_s32(section, "laserr_x");
+        m_iLaserrY = pSettings->r_s32(section, "laserr_y");
+    }
+
+    if (m_eGripStatus == ALife::eAddonAttachable)
+    {
+        m_sGripName = pSettings->r_string(section, "grip_name");
+        m_iGripX = pSettings->r_s32(section, "grip_x");
+        m_iGripY = pSettings->r_s32(section, "grip_y");
+    }
     InitAddons();
     if (pSettings->line_exist(section, "weapon_remove_time"))
         m_dwWeaponRemoveTime = pSettings->r_u32(section, "weapon_remove_time");
@@ -1140,7 +1306,7 @@ int CWeapon::GetSuitableAmmoTotal(bool use_item_to_spawn) const
     return ae_count + m_iAmmoCurrentTotal;
 }
 
-int CWeapon::GetAmmoCount(u8 ammo_type) const
+int CWeapon::GetAmmoCount(u32 ammo_type) const
 {
     VERIFY(m_pInventory);
     R_ASSERT(ammo_type < m_ammoTypes.size());
@@ -1241,12 +1407,229 @@ bool CWeapon::IsSilencerAttached() const
         ALife::eAddonPermanent == m_eSilencerStatus;
 }
 
+
+bool CWeapon::IsBarrelAttached() const
+{
+    return (ALife::eAddonAttachable == m_eBarrelStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBarrel)) ||
+        ALife::eAddonPermanent == m_eBarrelStatus;
+}
+
+
+bool CWeapon::IsBipodsAttached() const
+{
+    return (ALife::eAddonAttachable == m_eBipodsStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonBipods)) ||
+        ALife::eAddonPermanent == m_eBipodsStatus;
+}
+
+bool CWeapon::IsChargsAttached() const
+{
+    return (ALife::eAddonAttachable == m_eChargsStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargs)) ||
+        ALife::eAddonPermanent == m_eChargsStatus;
+}
+
+
+bool CWeapon::IsCharghAttached() const
+{
+    return (ALife::eAddonAttachable == m_eCharghStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonChargh)) ||
+        ALife::eAddonPermanent == m_eCharghStatus;
+}
+
+bool CWeapon::IsFlightAttached() const
+{
+    return (ALife::eAddonAttachable == m_eFlightStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFlight)) ||
+        ALife::eAddonPermanent == m_eFlightStatus;
+}
+
+
+bool CWeapon::IsFgripsAttached() const
+{
+    return (ALife::eAddonAttachable == m_eFgripsStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonFgrips)) ||
+        ALife::eAddonPermanent == m_eFgripsStatus;
+}
+
+bool CWeapon::IsGripAttached() const
+{
+    return (ALife::eAddonAttachable == m_eGripStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGrip)) ||
+        ALife::eAddonPermanent == m_eGripStatus;
+}
+
+bool CWeapon::IsGblockAttached() const
+{
+    return (ALife::eAddonAttachable == m_eGblockStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonGblock)) ||
+        ALife::eAddonPermanent == m_eGblockStatus;
+}
+
+
+bool CWeapon::IsHguardAttached() const
+{
+    return (ALife::eAddonAttachable == m_eHguardStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonHguard)) ||
+        ALife::eAddonPermanent == m_eHguardStatus;
+}
+
+bool CWeapon::IsMagaznAttached() const
+{
+    return (ALife::eAddonAttachable == m_eMagaznStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMagazn)) ||
+        ALife::eAddonPermanent == m_eMagaznStatus;
+}
+
+bool CWeapon::IsMountsAttached() const
+{
+    return (ALife::eAddonAttachable == m_eMountsStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMounts)) ||
+        ALife::eAddonPermanent == m_eMountsStatus;
+}
+
+
+bool CWeapon::IsMuzzleAttached() const
+{
+    return (ALife::eAddonAttachable == m_eMuzzleStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonMuzzle)) ||
+        ALife::eAddonPermanent == m_eMuzzleStatus;
+}
+
+
+bool CWeapon::IsRcievrAttached() const
+{
+    return (ALife::eAddonAttachable == m_eRcievrStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonRcievr)) ||
+        ALife::eAddonPermanent == m_eRcievrStatus;
+}
+
+
+bool CWeapon::IsSightsAttached() const
+{
+    return (ALife::eAddonAttachable == m_eSightsStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSights)) ||
+        ALife::eAddonPermanent == m_eSightsStatus;
+}
+
+bool CWeapon::IsSightrAttached() const
+{
+    return (ALife::eAddonAttachable == m_eSightrStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightr)) ||
+        ALife::eAddonPermanent == m_eSightrStatus;
+}
+
+bool CWeapon::IsSightfAttached() const
+{
+    return (ALife::eAddonAttachable == m_eSightfStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSightf)) ||
+        ALife::eAddonPermanent == m_eSightfStatus;
+}
+
+
+bool CWeapon::IsSight2Attached() const
+{
+    return (ALife::eAddonAttachable == m_eSight2Status &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonSight2)) ||
+        ALife::eAddonPermanent == m_eSight2Status;
+}
+
+
+bool CWeapon::IsStocksAttached() const
+{
+    return (ALife::eAddonAttachable == m_eStocksStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonStocks)) ||
+        ALife::eAddonPermanent == m_eStocksStatus;
+}
+
+
+bool CWeapon::IsTacti1Attached() const
+{
+    return (ALife::eAddonAttachable == m_eTacti1Status &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonTacti1)) ||
+        ALife::eAddonPermanent == m_eTacti1Status;
+}
+
+
+bool CWeapon::IsAdapt1Attached() const
+{
+    return (ALife::eAddonAttachable == m_eAdapt1Status &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt1)) ||
+        ALife::eAddonPermanent == m_eAdapt1Status;
+}
+
+
+bool CWeapon::IsAdapt2Attached() const
+{
+    return (ALife::eAddonAttachable == m_eAdapt2Status &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonAdapt2)) ||
+        ALife::eAddonPermanent == m_eAdapt2Status;
+}
+
+
+bool CWeapon::IsLaserrAttached() const
+{
+    return (ALife::eAddonAttachable == m_eLaserrStatus &&
+               0 != (m_flagsAddOnState & CSE_ALifeItemWeapon::eWeaponAddonLaserr)) ||
+        ALife::eAddonPermanent == m_eLaserrStatus;
+}
+
+
+
+
+
 bool CWeapon::GrenadeLauncherAttachable() { return (ALife::eAddonAttachable == m_eGrenadeLauncherStatus); }
 bool CWeapon::ScopeAttachable() { return (ALife::eAddonAttachable == m_eScopeStatus); }
 bool CWeapon::SilencerAttachable() { return (ALife::eAddonAttachable == m_eSilencerStatus); }
+bool CWeapon::BarrelAttachable() { return (ALife::eAddonAttachable == m_eBarrelStatus); }
+bool CWeapon::GripAttachable() { return (ALife::eAddonAttachable == m_eGripStatus); }
+bool CWeapon::BipodsAttachable() { return (ALife::eAddonAttachable == m_eBipodsStatus); }
+bool CWeapon::ChargsAttachable() { return (ALife::eAddonAttachable == m_eChargsStatus); }
+bool CWeapon::CharghAttachable() { return (ALife::eAddonAttachable == m_eCharghStatus); }
+bool CWeapon::FlightAttachable() { return (ALife::eAddonAttachable == m_eFlightStatus); }
+bool CWeapon::FgripsAttachable() { return (ALife::eAddonAttachable == m_eFgripsStatus); }
+bool CWeapon::GblockAttachable() { return (ALife::eAddonAttachable == m_eGblockStatus); }
+bool CWeapon::HguardAttachable() { return (ALife::eAddonAttachable == m_eHguardStatus); }
+bool CWeapon::MagaznAttachable() { return (ALife::eAddonAttachable == m_eMagaznStatus); }
+bool CWeapon::MountsAttachable() { return (ALife::eAddonAttachable == m_eMountsStatus); }
+bool CWeapon::MuzzleAttachable() { return (ALife::eAddonAttachable == m_eMuzzleStatus); }
+bool CWeapon::RcievrAttachable() { return (ALife::eAddonAttachable == m_eRcievrStatus); }
+bool CWeapon::SightsAttachable() { return (ALife::eAddonAttachable == m_eSightsStatus); }
+bool CWeapon::SightfAttachable() { return (ALife::eAddonAttachable == m_eSightfStatus); }
+bool CWeapon::SightrAttachable() { return (ALife::eAddonAttachable == m_eSightrStatus); }
+bool CWeapon::Sight2Attachable() { return (ALife::eAddonAttachable == m_eSight2Status); }
+bool CWeapon::StocksAttachable() { return (ALife::eAddonAttachable == m_eStocksStatus); }
+bool CWeapon::Tacti1Attachable() { return (ALife::eAddonAttachable == m_eTacti1Status); }
+bool CWeapon::Adapt1Attachable() { return (ALife::eAddonAttachable == m_eAdapt1Status); }
+bool CWeapon::Adapt2Attachable() { return (ALife::eAddonAttachable == m_eAdapt2Status); }
+bool CWeapon::LaserrAttachable() { return (ALife::eAddonAttachable == m_eLaserrStatus); }
 shared_str wpn_scope = "wpn_scope";
 shared_str wpn_silencer = "wpn_silencer";
 shared_str wpn_grenade_launcher = "wpn_launcher";
+shared_str wpn_barrel = "wpn_barrel";
+shared_str wpn_grip = "wpn_grip";
+shared_str wpn_bipods = "wpn_bipods";
+shared_str wpn_chargs = "wpn_chargs";
+shared_str wpn_chargh = "wpn_chargh";
+shared_str wpn_flight = "wpn_flight";
+shared_str wpn_fgrips = "wpn_fgrips";
+shared_str wpn_gblock = "wpn_gblock";
+shared_str wpn_hguard = "wpn_hguard";
+shared_str wpn_magazn = "wpn_magazn";
+shared_str wpn_mounts = "wpn_mounts";
+shared_str wpn_muzzle = "wpn_muzzle";
+shared_str wpn_rcievr = "wpn_rcievr";
+shared_str wpn_sights = "wpn_sights";
+shared_str wpn_sightf = "wpn_sightf";
+shared_str wpn_sightr = "wpn_sightr";
+shared_str wpn_sight2 = "wpn_sight2";
+shared_str wpn_stocks = "wpn_stocks";
+shared_str wpn_tacti1 = "wpn_tacti1";
+shared_str wpn_adapt1 = "wpn_adapt1";
+shared_str wpn_adapt2 = "wpn_adapt2";
+shared_str wpn_laserr = "wpn_laserr";
+
 
 void CWeapon::UpdateHUDAddonsVisibility()
 { // actor only
@@ -1277,6 +1660,249 @@ void CWeapon::UpdateHUDAddonsVisibility()
     }
     else if (m_eSilencerStatus == ALife::eAddonPermanent)
         HudItemData()->set_bone_visible(wpn_silencer, TRUE, TRUE);
+
+    if (GripAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_grip, IsGripAttached());
+    }
+    if (m_eGripStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_grip, FALSE, TRUE);
+    }
+    else if (m_eGripStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_grip, TRUE, TRUE);
+
+    
+    if (BarrelAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_barrel, IsBarrelAttached());
+    }
+    if (m_eBarrelStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_barrel, FALSE, TRUE);
+    }
+    else if (m_eBarrelStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_barrel, TRUE, TRUE);
+
+    if (BipodsAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_bipods, IsBipodsAttached());
+    }
+    if (m_eBipodsStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_bipods, FALSE, TRUE);
+    }
+    else if (m_eBipodsStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_bipods, TRUE, TRUE);
+
+    if (ChargsAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_chargs, IsChargsAttached());
+    }
+    if (m_eChargsStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_chargs, FALSE, TRUE);
+    }
+    else if (m_eChargsStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_chargs, TRUE, TRUE);
+
+    if (CharghAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_chargh, IsCharghAttached());
+    }
+    if (m_eCharghStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_chargh, FALSE, TRUE);
+    }
+    else if (m_eCharghStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_chargh, TRUE, TRUE);
+
+    if (FlightAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_flight, IsFlightAttached());
+    }
+    if (m_eFlightStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_flight, FALSE, TRUE);
+    }
+    else if (m_eFlightStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_flight, TRUE, TRUE);
+
+    if (FgripsAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_fgrips, IsFgripsAttached());
+    }
+    if (m_eFgripsStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_fgrips, FALSE, TRUE);
+    }
+    else if (m_eFgripsStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_fgrips, TRUE, TRUE);
+
+    if (GblockAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_gblock, IsGblockAttached());
+    }
+    if (m_eGblockStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_gblock, FALSE, TRUE);
+    }
+    else if (m_eGblockStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_gblock, TRUE, TRUE);
+
+    if (HguardAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_hguard, IsHguardAttached());
+    }
+    if (m_eHguardStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_hguard, FALSE, TRUE);
+    }
+    else if (m_eHguardStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_hguard, TRUE, TRUE);
+
+    if (MagaznAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_magazn, IsMagaznAttached());
+    }
+    if (m_eMagaznStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_magazn, FALSE, TRUE);
+    }
+    else if (m_eMagaznStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_magazn, TRUE, TRUE);
+
+    if (MountsAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_mounts, IsMountsAttached());
+    }
+    if (m_eMountsStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_mounts, FALSE, TRUE);
+    }
+    else if (m_eMountsStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_mounts, TRUE, TRUE);
+
+    if (MuzzleAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_muzzle, IsMuzzleAttached());
+    }
+    if (m_eMuzzleStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_muzzle, FALSE, TRUE);
+    }
+    else if (m_eMuzzleStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_muzzle, TRUE, TRUE);
+
+    if (RcievrAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_rcievr, IsRcievrAttached());
+    }
+    if (m_eRcievrStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_rcievr, FALSE, TRUE);
+    }
+    else if (m_eRcievrStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_rcievr, TRUE, TRUE);
+
+    if (SightsAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_sights, IsSightsAttached());
+    }
+    if (m_eSightsStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_sights, FALSE, TRUE);
+    }
+    else if (m_eSightsStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_sights, TRUE, TRUE);
+
+    if (SightfAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_sightf, IsSightfAttached());
+    }
+    if (m_eSightfStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_sightf, FALSE, TRUE);
+    }
+    else if (m_eSightfStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_sightf, TRUE, TRUE);
+
+    if (SightrAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_sightr, IsSightrAttached());
+    }
+    if (m_eSightrStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_sightr, FALSE, TRUE);
+    }
+    else if (m_eSightrStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_sightr, TRUE, TRUE);
+
+    if (Sight2Attachable())
+    {
+        HudItemData()->set_bone_visible(wpn_sight2, IsSight2Attached());
+    }
+    if (m_eSight2Status == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_sight2, FALSE, TRUE);
+    }
+    else if (m_eSight2Status == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_sight2, TRUE, TRUE);
+
+    if (StocksAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_stocks, IsStocksAttached());
+    }
+    if (m_eStocksStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_stocks, FALSE, TRUE);
+    }
+    else if (m_eStocksStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_stocks, TRUE, TRUE);
+
+    if (Tacti1Attachable())
+    {
+        HudItemData()->set_bone_visible(wpn_tacti1, IsTacti1Attached());
+    }
+    if (m_eTacti1Status == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_tacti1, FALSE, TRUE);
+    }
+    else if (m_eTacti1Status == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_tacti1, TRUE, TRUE);
+
+    if (Adapt1Attachable())
+    {
+        HudItemData()->set_bone_visible(wpn_adapt1, IsAdapt1Attached());
+    }
+    if (m_eAdapt1Status == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_adapt1, FALSE, TRUE);
+    }
+    else if (m_eAdapt1Status == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_adapt1, TRUE, TRUE);
+
+    if (Adapt2Attachable())
+    {
+        HudItemData()->set_bone_visible(wpn_adapt2, IsAdapt2Attached());
+    }
+    if (m_eAdapt2Status == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_adapt2, FALSE, TRUE);
+    }
+    else if (m_eAdapt2Status == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_adapt2, TRUE, TRUE);
+
+    if (LaserrAttachable())
+    {
+        HudItemData()->set_bone_visible(wpn_laserr, IsLaserrAttached());
+    }
+    if (m_eLaserrStatus == ALife::eAddonDisabled)
+    {
+        HudItemData()->set_bone_visible(wpn_laserr, FALSE, TRUE);
+    }
+    else if (m_eLaserrStatus == ALife::eAddonPermanent)
+        HudItemData()->set_bone_visible(wpn_laserr, TRUE, TRUE);
 
     if (GrenadeLauncherAttachable())
     {
@@ -1338,7 +1964,424 @@ void CWeapon::UpdateAddonsVisibility()
         pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
         //		Log("silencer", pWeaponVisual->LL_GetBoneVisible	(bone_id));
     }
-
+    bone_id = pWeaponVisual->LL_BoneID(wpn_grip);
+    if (GripAttachable())
+    {
+        if (IsGripAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eGripStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_barrel);
+    if (BarrelAttachable())
+    {
+        if (IsBarrelAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eBarrelStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_bipods);
+    if (BipodsAttachable())
+    {
+        if (IsBipodsAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eBipodsStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_chargs);
+    if (ChargsAttachable())
+    {
+        if (IsChargsAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eChargsStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_chargh);
+    if (CharghAttachable())
+    {
+        if (IsCharghAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eCharghStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_flight);
+    if (FlightAttachable())
+    {
+        if (IsFlightAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eFlightStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_fgrips);
+    if (FgripsAttachable())
+    {
+        if (IsFgripsAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eFgripsStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_gblock);
+    if (GblockAttachable())
+    {
+        if (IsGblockAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eGblockStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_hguard);
+    if (HguardAttachable())
+    {
+        if (IsHguardAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eHguardStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_magazn);
+    if (MagaznAttachable())
+    {
+        if (IsMagaznAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eMagaznStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_mounts);
+    if (MountsAttachable())
+    {
+        if (IsMountsAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eMountsStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_muzzle);
+    if (MuzzleAttachable())
+    {
+        if (IsMuzzleAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eMuzzleStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_rcievr);
+    if (RcievrAttachable())
+    {
+        if (IsRcievrAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eRcievrStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_sights);
+    if (SightsAttachable())
+    {
+        if (IsSightsAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eSightsStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_sightf);
+    if (SightfAttachable())
+    {
+        if (IsSightfAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eSightfStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_sightr);
+    if (SightrAttachable())
+    {
+        if (IsSightrAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eSightrStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_sight2);
+    if (Sight2Attachable())
+    {
+        if (IsSight2Attached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eSight2Status == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_stocks);
+    if (StocksAttachable())
+    {
+        if (IsStocksAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eStocksStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_tacti1);
+    if (Tacti1Attachable())
+    {
+        if (IsTacti1Attached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eTacti1Status == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_adapt1);
+    if (Adapt1Attachable())
+    {
+        if (IsAdapt1Attached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eAdapt1Status == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_adapt2);
+    if (Adapt2Attachable())
+    {
+        if (IsAdapt2Attached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eAdapt2Status == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
+    bone_id = pWeaponVisual->LL_BoneID(wpn_laserr);
+    if (LaserrAttachable())
+    {
+        if (IsLaserrAttached())
+        {
+            if (!pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, TRUE, TRUE);
+        }
+        else
+        {
+            if (pWeaponVisual->LL_GetBoneVisible(bone_id))
+                pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        }
+    }
+    if (m_eLaserrStatus == ALife::eAddonDisabled && bone_id != BI_NONE && pWeaponVisual->LL_GetBoneVisible(bone_id))
+    {
+        pWeaponVisual->LL_SetBoneVisible(bone_id, FALSE, TRUE);
+        //		Log("grip", pWeaponVisual->LL_GetBoneVisible	(bone_id));
+    }
     bone_id = pWeaponVisual->LL_BoneID(wpn_grenade_launcher);
     if (GrenadeLauncherAttachable())
     {
@@ -1794,6 +2837,7 @@ float CWeapon::GetMagazineWeight(const decltype(CWeapon::m_magazine)& mag) const
 float CWeapon::Weight() const
 {
     float res = CInventoryItemObject::Weight();
+
     if (IsGrenadeLauncherAttached() && GetGrenadeLauncherName().size())
     {
         res += pSettings->r_float(GetGrenadeLauncherName(), "inv_weight");
@@ -1806,10 +2850,98 @@ float CWeapon::Weight() const
     {
         res += pSettings->r_float(GetSilencerName(), "inv_weight");
     }
+    if (IsBarrelAttached() && GetBarrelName().size())
+    {
+        res += pSettings->r_float(GetBarrelName(), "inv_weight");
+    }
+    if (IsBipodsAttached() && GetBipodsName().size())
+    {
+        res += pSettings->r_float(GetBipodsName(), "inv_weight");
+    }
+    if (IsChargsAttached() && GetChargsName().size())
+    {
+        res += pSettings->r_float(GetChargsName(), "inv_weight");
+    }
+    if (IsCharghAttached() && GetCharghName().size())
+    {
+        res += pSettings->r_float(GetCharghName(), "inv_weight");
+    }
+    if (IsFlightAttached() && GetFlightName().size())
+    {
+        res += pSettings->r_float(GetFlightName(), "inv_weight");
+    }
+    if (IsFgripsAttached() && GetFgripsName().size())
+    {
+        res += pSettings->r_float(GetFgripsName(), "inv_weight");
+    }
+    if (IsGripAttached() && GetGripName().size())
+    {
+        res += pSettings->r_float(GetGripName(), "inv_weight");
+    }
+    if (IsGblockAttached() && GetGblockName().size())
+    {
+        res += pSettings->r_float(GetGblockName(), "inv_weight");
+    }
+    if (IsHguardAttached() && GetHguardName().size())
+    {
+        res += pSettings->r_float(GetHguardName(), "inv_weight");
+    }
+    if (IsMagaznAttached() && GetMagaznName().size())
+    {
+        res += pSettings->r_float(GetMagaznName(), "inv_weight");
+    }
+    if (IsMountsAttached() && GetMountsName().size())
+    {
+        res += pSettings->r_float(GetMountsName(), "inv_weight");
+    }
+    if (IsMuzzleAttached() && GetMuzzleName().size())
+    {
+        res += pSettings->r_float(GetMuzzleName(), "inv_weight");
+    }
+    if (IsRcievrAttached() && GetRcievrName().size())
+    {
+        res += pSettings->r_float(GetRcievrName(), "inv_weight");
+    }
+    if (IsSightsAttached() && GetSightsName().size())
+    {
+        res += pSettings->r_float(GetSightsName(), "inv_weight");
+    }
+    if (IsSightfAttached() && GetSightfName().size())
+    {
+        res += pSettings->r_float(GetSightfName(), "inv_weight");
+    }
+    if (IsSightrAttached() && GetSightrName().size())
+    {
+        res += pSettings->r_float(GetSightrName(), "inv_weight");
+    }
+    if (IsSight2Attached() && GetSight2Name().size())
+    {
+        res += pSettings->r_float(GetSight2Name(), "inv_weight");
+    }
+    if (IsStocksAttached() && GetStocksName().size())
+    {
+        res += pSettings->r_float(GetStocksName(), "inv_weight");
+    }
+    if (IsTacti1Attached() && GetTacti1Name().size())
+    {
+        res += pSettings->r_float(GetTacti1Name(), "inv_weight");
+    }
+    if (IsAdapt1Attached() && GetAdapt1Name().size())
+    {
+        res += pSettings->r_float(GetAdapt1Name(), "inv_weight");
+    }
+    if (IsAdapt2Attached() && GetAdapt2Name().size())
+    {
+        res += pSettings->r_float(GetAdapt2Name(), "inv_weight");
+    }
+    if (IsLaserrAttached() && GetLaserrName().size())
+    {
+        res += pSettings->r_float(GetLaserrName(), "inv_weight");
+    }
     res += GetMagazineWeight(m_magazine);
-
     return res;
 }
+
 
 bool CWeapon::show_crosshair() { return !IsPending() && (!IsZoomed() || !ZoomHideCrosshair()); }
 bool CWeapon::show_indicators() { return !(IsZoomed() && ZoomTexture()); }
@@ -1944,7 +3076,98 @@ u32 CWeapon::Cost() const
     {
         res += pSettings->r_u32(GetSilencerName(), "cost");
     }
-
+    if (IsGripAttached() && GetGripName().size())
+    {
+        res += pSettings->r_u32(GetGripName(), "cost");
+    }
+    if (IsBarrelAttached() && GetBarrelName().size())
+    {
+        res += pSettings->r_u32(GetBarrelName(), "cost");
+    }
+    if (IsBipodsAttached() && GetBipodsName().size())
+    {
+        res += pSettings->r_u32(GetBipodsName(), "cost");
+    }
+    if (IsChargsAttached() && GetChargsName().size())
+    {
+        res += pSettings->r_u32(GetChargsName(), "cost");
+    }
+    if (IsCharghAttached() && GetCharghName().size())
+    {
+        res += pSettings->r_u32(GetCharghName(), "cost");
+    }
+    if (IsFlightAttached() && GetFlightName().size())
+    {
+        res += pSettings->r_u32(GetFlightName(), "cost");
+    }
+    if (IsFgripsAttached() && GetFgripsName().size())
+    {
+        res += pSettings->r_u32(GetFgripsName(), "cost");
+    }
+    if (IsGblockAttached() && GetGblockName().size())
+    {
+        res += pSettings->r_u32(GetGblockName(), "cost");
+    }
+    if (IsHguardAttached() && GetHguardName().size())
+    {
+        res += pSettings->r_u32(GetHguardName(), "cost");
+    }
+    if (IsMagaznAttached() && GetMagaznName().size())
+    {
+        res += pSettings->r_u32(GetMagaznName(), "cost");
+    }
+    if (IsMountsAttached() && GetMountsName().size())
+    {
+        res += pSettings->r_u32(GetMountsName(), "cost");
+    }
+    if (IsMuzzleAttached() && GetMuzzleName().size())
+    {
+        res += pSettings->r_u32(GetMuzzleName(), "cost");
+    }
+    if (IsRcievrAttached() && GetRcievrName().size())
+    {
+        res += pSettings->r_u32(GetRcievrName(), "cost");
+    }
+    if (IsSightsAttached() && GetSightsName().size())
+    {
+        res += pSettings->r_u32(GetSightsName(), "cost");
+    }
+    if (IsSightfAttached() && GetSightfName().size())
+    {
+        res += pSettings->r_u32(GetSightfName(), "cost");
+    }
+    if (IsSightrAttached() && GetSightrName().size())
+    {
+        res += pSettings->r_u32(GetSightrName(), "cost");
+    }
+    if (IsSight2Attached() && GetSight2Name().size())
+    {
+        res += pSettings->r_u32(GetSight2Name(), "cost");
+    }
+    if (IsStocksAttached() && GetStocksName().size())
+    {
+        res += pSettings->r_u32(GetStocksName(), "cost");
+    }
+    if (IsTacti1Attached() && GetTacti1Name().size())
+    {
+        res += pSettings->r_u32(GetTacti1Name(), "cost");
+    }
+    if (IsAdapt1Attached() && GetAdapt1Name().size())
+    {
+        res += pSettings->r_u32(GetAdapt1Name(), "cost");
+    }
+    if (IsAdapt2Attached() && GetAdapt2Name().size())
+    {
+        res += pSettings->r_u32(GetAdapt2Name(), "cost");
+    }
+    if (IsAdapt2Attached() && GetAdapt2Name().size())
+    {
+        res += pSettings->r_u32(GetAdapt2Name(), "cost");
+    }
+    if (IsLaserrAttached() && GetLaserrName().size())
+    {
+        res += pSettings->r_u32(GetLaserrName(), "cost");
+    }
     if (iAmmoElapsed)
     {
         float w = pSettings->r_float(m_ammoTypes[m_ammoType].c_str(), "cost");

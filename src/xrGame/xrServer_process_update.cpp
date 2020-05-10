@@ -19,11 +19,11 @@ void xrServer::Process_update(NET_Packet& P, ClientID sender)
     while (!P.r_eof())
     {
         // find entity
-        u16 ID;
-        u8 size;
+        u32 ID;
+        u16 size;
 
-        P.r_u16(ID);
-        P.r_u8(size);
+        P.r_u32(ID);
+        P.r_u16(size);
         u32 _pos = P.r_tell();
         CSE_Abstract* E = ID_to_entity(ID);
 
@@ -38,7 +38,7 @@ void xrServer::Process_update(NET_Packet& P, ClientID sender)
 
             if ((P.r_tell() - _pos) != size)
             {
-                string16 tmp;
+                string32 tmp;
                 CLSID2TEXT(E->m_tClassID, tmp);
                 xrDebug::Fatal(DEBUG_INFO,
                     "Beer from the creator of '%s'; initiator: 0x%08x, r_tell() = %d, pos = %d, objectID = %d", tmp,

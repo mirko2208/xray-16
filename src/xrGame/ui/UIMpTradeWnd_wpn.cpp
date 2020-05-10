@@ -115,6 +115,33 @@ void CUIMpTradeWnd::OnBtnRifleSilencerClicked(CUIWindow* w, void* d)
     }
 }
 
+void CUIMpTradeWnd::OnBtnRifleGripClicked(CUIWindow* w, void* d)
+{
+    CheckDragItemToDestroy();
+    CUIDragDropListEx* res = m_list[e_rifle];
+    CUICellItem* ci = (res->ItemsCount()) ? res->GetItemIdx(0) : NULL;
+    if (!ci)
+        return;
+
+    SBuyItemInfo* pitem = FindItem(ci);
+    if (IsAddonAttached(pitem, at_grip))
+    { // detach
+        SellItemAddons(pitem, at_grip);
+    }
+    else if (CanAttachAddon(pitem, at_grip))
+    { // attach
+        shared_str addon_name = GetAddonNameSect(pitem, at_grip);
+
+        if (NULL == m_store_hierarchy->FindItem(addon_name))
+            return;
+
+        SBuyItemInfo* addon_item = CreateItem(addon_name, SBuyItemInfo::e_undefined, false);
+        bool b_res_addon = TryToBuyItem(addon_item, bf_normal, pitem);
+        if (!b_res_addon)
+            DestroyItem(addon_item);
+    }
+}
+
 void CUIMpTradeWnd::OnBtnRifleScopeClicked(CUIWindow* w, void* d)
 {
     CheckDragItemToDestroy();
@@ -290,6 +317,10 @@ bool CUIMpTradeWnd::IsAddonAttached(SBuyItemInfo* itm, item_addon_type at)
     }
     break;
 
+    case at_grip: { b_res = (w->GripAttachable() && w->IsGripAttached());
+    }
+    break;
+
     case at_glauncher: { b_res = (w->GrenadeLauncherAttachable() && w->IsGrenadeLauncherAttached());
     }
     break;
@@ -315,6 +346,10 @@ bool CUIMpTradeWnd::CanAttachAddon(SBuyItemInfo* itm, item_addon_type at)
     break;
 
     case at_silencer: { b_res = (w->SilencerAttachable() && !w->IsSilencerAttached());
+    }
+    break;
+
+    case at_grip: { b_res = (w->GripAttachable() && !w->IsGripAttached());
     }
     break;
 
@@ -358,6 +393,10 @@ shared_str CUIMpTradeWnd::GetAddonNameSect(SBuyItemInfo* itm, item_addon_type at
     }
     break;
 
+    case at_grip: { return w->GetGripName();
+    }
+    break;
+
     case at_glauncher: { return w->GetGrenadeLauncherName();
     }
     break;
@@ -388,6 +427,8 @@ CUIMpTradeWnd::item_addon_type CUIMpTradeWnd::GetItemType(const shared_str& name
         return at_silencer;
     else if (group == "gl")
         return at_glauncher;
+    else if (group == "grip")
+        return at_grip;
     else
         return at_not_addon;
 }

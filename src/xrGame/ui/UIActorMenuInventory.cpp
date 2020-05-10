@@ -18,8 +18,32 @@
 #include "UIGameCustom.h"
 #include "eatable_item_object.h"
 #include "Silencer.h"
+#include "Grip.h"
+#include "Chargs.h"
+#include "Chargh.h"
+#include "Flight.h"
+#include "Fgrips.h"
+#include "Gblock.h"
+#include "Hguard.h"
+#include "Magazn.h"
+#include "Mounts.h"
+#include "Muzzle.h"
+#include "Rcievr.h"
+#include "Sights.h"
+#include "Sightf.h"
+#include "Sightr.h"
+#include "Sight2.h"
+#include "Stocks.h"
+#include "Tacti1.h"
+#include "Adapt1.h"
+#include "Adapt2.h"
+#include "Laserr.h"
+
+#include "Bipods.h"
 #include "Scope.h"
 #include "GrenadeLauncher.h"
+#include "Barrel.h"
+
 #include "Artefact.h"
 #include "eatable_item.h"
 #include "BottleItem.h"
@@ -1006,6 +1030,248 @@ void CUIActorMenu::PropertiesBoxForWeapon(CUICellItem* cell_item, PIItem item, b
         {
         }
     }
+    if (pWeapon->GripAttachable())
+    {
+        if (pWeapon->IsGripAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_grip", NULL, INVENTORY_DETACH_GRIP_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->BarrelAttachable())
+    {
+        if (pWeapon->IsBarrelAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_barrel", NULL, INVENTORY_DETACH_BARREL_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->BipodsAttachable())
+    {
+        if (pWeapon->IsBipodsAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_bipod", NULL, INVENTORY_DETACH_BIPODS_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->ChargsAttachable())
+    {
+        if (pWeapon->IsChargsAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_charges", NULL, INVENTORY_DETACH_CHARGS_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->CharghAttachable())
+    {
+        if (pWeapon->IsCharghAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_charge_handle", NULL, INVENTORY_DETACH_CHARGH_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->FlightAttachable())
+    {
+        if (pWeapon->IsFlightAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_flashlight", NULL, INVENTORY_DETACH_FLIGHT_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->FgripsAttachable())
+    {
+        if (pWeapon->IsFgripsAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_foregrip", NULL, INVENTORY_DETACH_FGRIPS_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->GblockAttachable())
+    {
+        if (pWeapon->IsGblockAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_gasblock", NULL, INVENTORY_DETACH_GBLOCK_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->HguardAttachable())
+    {
+        if (pWeapon->IsHguardAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_handguard", NULL, INVENTORY_DETACH_HGUARD_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->MagaznAttachable())
+    {
+        if (pWeapon->IsMagaznAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_magazine", NULL, INVENTORY_DETACH_MAGAZN_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->MountsAttachable())
+    {
+        if (pWeapon->IsMountsAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_mount", NULL, INVENTORY_DETACH_MOUNTS_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->MuzzleAttachable())
+    {
+        if (pWeapon->IsMuzzleAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_muzzle", NULL, INVENTORY_DETACH_MUZZLE_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->RcievrAttachable())
+    {
+        if (pWeapon->IsRcievrAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_reciever", NULL, INVENTORY_DETACH_RCIEVR_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->SightsAttachable())
+    {
+        if (pWeapon->IsSightsAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_sight", NULL, INVENTORY_DETACH_SIGHTS_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->SightfAttachable())
+    {
+        if (pWeapon->IsSightfAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_front_sight", NULL, INVENTORY_DETACH_SIGHTF_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->SightrAttachable())
+    {
+        if (pWeapon->IsSightrAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_rear_sight", NULL, INVENTORY_DETACH_SIGHTR_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->Sight2Attachable())
+    {
+        if (pWeapon->IsSight2Attached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_sight_2", NULL, INVENTORY_DETACH_SIGHT2_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->StocksAttachable())
+    {
+        if (pWeapon->IsStocksAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_stock", NULL, INVENTORY_DETACH_STOCKS_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->Tacti1Attachable())
+    {
+        if (pWeapon->IsTacti1Attached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_tactical_device", NULL, INVENTORY_DETACH_TACTI1_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->Adapt1Attachable())
+    {
+        if (pWeapon->IsAdapt1Attached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_adapter", NULL, INVENTORY_DETACH_ADAPT1_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->Adapt2Attachable())
+    {
+        if (pWeapon->IsAdapt2Attached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_adapter_2", NULL, INVENTORY_DETACH_ADAPT2_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
+    if (pWeapon->LaserrAttachable())
+    {
+        if (pWeapon->IsLaserrAttached())
+        {
+            m_UIPropertiesBox->AddItem("st_detach_laser", NULL, INVENTORY_DETACH_LASERR_ADDON);
+            b_show = true;
+        }
+        else
+        {
+        }
+    }
     if (smart_cast<CWeaponMagazined*>(pWeapon) && IsGameTypeSingle())
     {
         bool b = (pWeapon->GetAmmoElapsed() != 0);
@@ -1035,7 +1301,29 @@ void CUIActorMenu::PropertiesBoxForAddon(PIItem item, bool& b_show)
 
     CScope* pScope = smart_cast<CScope*>(item);
     CSilencer* pSilencer = smart_cast<CSilencer*>(item);
+    CGrip* pGrip = smart_cast<CGrip*>(item);
     CGrenadeLauncher* pGrenadeLauncher = smart_cast<CGrenadeLauncher*>(item);
+    CBipods* pBipods = smart_cast<CBipods*>(item);
+    CBarrel* pBarrel = smart_cast<CBarrel*>(item);
+    CChargs* pChargs = smart_cast<CChargs*>(item);
+    CChargh* pChargh = smart_cast<CChargh*>(item);
+    CFlight* pFlight = smart_cast<CFlight*>(item);
+    CFgrips* pFgrips = smart_cast<CFgrips*>(item);
+    CGblock* pGblock = smart_cast<CGblock*>(item);
+    CHguard* pHguard = smart_cast<CHguard*>(item);
+    CMagazn* pMagazn = smart_cast<CMagazn*>(item);
+    CMounts* pMounts = smart_cast<CMounts*>(item);
+    CMuzzle* pMuzzle = smart_cast<CMuzzle*>(item);
+    CRcievr* pRcievr = smart_cast<CRcievr*>(item);
+    CSights* pSights = smart_cast<CSights*>(item);
+    CSightf* pSightf = smart_cast<CSightf*>(item);
+    CSightr* pSightr = smart_cast<CSightr*>(item);
+    CSight2* pSight2 = smart_cast<CSight2*>(item);
+    CStocks* pStocks = smart_cast<CStocks*>(item);
+    CTacti1* pTacti1 = smart_cast<CTacti1*>(item);
+    CAdapt1* pAdapt1 = smart_cast<CAdapt1*>(item);
+    CAdapt2* pAdapt2 = smart_cast<CAdapt2*>(item);
+    CLaserr* pLaserr = smart_cast<CLaserr*>(item);
     CInventory* inv = &m_pActorInvOwner->inventory();
 
     PIItem item_in_slot_2 = inv->ItemFromSlot(INV_SLOT_2);
@@ -1084,6 +1372,513 @@ void CUIActorMenu::PropertiesBoxForAddon(PIItem item, bool& b_show)
             str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
             m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
             //			m_UIPropertiesBox->AddItem( "st_attach_silencer_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pGrip)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pGrip))
+        {
+            shared_str str = StringTable().translate("st_attach_grip_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pGrip))
+        {
+            shared_str str = StringTable().translate("st_attach_grip_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pBarrel)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pBarrel))
+        {
+            shared_str str = StringTable().translate("st_attach_barrel_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_barrel_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pBarrel))
+        {
+            shared_str str = StringTable().translate("st_attach_barrel_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pBipods)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pBipods))
+        {
+            shared_str str = StringTable().translate("st_attach_bipod_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pBipods))
+        {
+            shared_str str = StringTable().translate("st_attach_bipod_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pChargs)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pChargs))
+        {
+            shared_str str = StringTable().translate("st_attach_charges_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pChargs))
+        {
+            shared_str str = StringTable().translate("st_attach_charges_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pChargh)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pChargh))
+        {
+            shared_str str = StringTable().translate("st_attach_chargehandle_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pChargh))
+        {
+            shared_str str = StringTable().translate("st_attach_chargehandle_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pFlight)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pFlight))
+        {
+            shared_str str = StringTable().translate("st_attach_flashlight_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pFlight))
+        {
+            shared_str str = StringTable().translate("st_attach_flashlight_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pFgrips)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pFgrips))
+        {
+            shared_str str = StringTable().translate("st_attach_foregrip_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pFgrips))
+        {
+            shared_str str = StringTable().translate("st_attach_foregrip_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pGblock)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pGblock))
+        {
+            shared_str str = StringTable().translate("st_attach_gasblock_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pGblock))
+        {
+            shared_str str = StringTable().translate("st_attach_gasblock_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pHguard)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pHguard))
+        {
+            shared_str str = StringTable().translate("st_attach_handguard_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pHguard))
+        {
+            shared_str str = StringTable().translate("st_attach_handguard_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pMagazn)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pMagazn))
+        {
+            shared_str str = StringTable().translate("st_attach_magazine_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pMagazn))
+        {
+            shared_str str = StringTable().translate("st_attach_magazn_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pMounts)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pMounts))
+        {
+            shared_str str = StringTable().translate("st_attach_mount_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pMounts))
+        {
+            shared_str str = StringTable().translate("st_attach_mount_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pMuzzle)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pMuzzle))
+        {
+            shared_str str = StringTable().translate("st_attach_muzzle_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pMuzzle))
+        {
+            shared_str str = StringTable().translate("st_attach_muzzle_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pRcievr)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pRcievr))
+        {
+            shared_str str = StringTable().translate("st_attach_reciever_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pRcievr))
+        {
+            shared_str str = StringTable().translate("st_attach_reciever_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pSights)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pSights))
+        {
+            shared_str str = StringTable().translate("st_attach_sights_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pSights))
+        {
+            shared_str str = StringTable().translate("st_attach_sights_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pSightf)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pSightf))
+        {
+            shared_str str = StringTable().translate("st_attach_front_sight_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pSightf))
+        {
+            shared_str str = StringTable().translate("st_attach_front_sight_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pSightr)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pSightr))
+        {
+            shared_str str = StringTable().translate("st_attach_rear_sight_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pSightr))
+        {
+            shared_str str = StringTable().translate("st_attach_rear_sight_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pSight2)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pSight2))
+        {
+            shared_str str = StringTable().translate("st_attach_sight_2_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pSight2))
+        {
+            shared_str str = StringTable().translate("st_attach_sight_2_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pStocks)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pStocks))
+        {
+            shared_str str = StringTable().translate("st_attach_stock_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pStocks))
+        {
+            shared_str str = StringTable().translate("st_attach_stock_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    
+    if (pTacti1)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pTacti1))
+        {
+            shared_str str = StringTable().translate("st_attach_tactical_device_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pTacti1))
+        {
+            shared_str str = StringTable().translate("st_attach_tactical_device_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pAdapt1)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pAdapt1))
+        {
+            shared_str str = StringTable().translate("st_attach_adapter_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pAdapt1))
+        {
+            shared_str str = StringTable().translate("st_attach_adapter_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pAdapt2)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pAdapt2))
+        {
+            shared_str str = StringTable().translate("st_attach_adapter_2_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pAdapt1))
+        {
+            shared_str str = StringTable().translate("st_attach_adapter_2_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        return;
+    }
+
+    if (pLaserr)
+    {
+        if (item_in_slot_2 && item_in_slot_2->CanAttach(pLaserr))
+        {
+            shared_str str = StringTable().translate("st_attach_laser_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_2->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_2, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_pistol",  (void*)item_in_slot_2,
+            // INVENTORY_ATTACH_ADDON );
+            b_show = true;
+        }
+        if (item_in_slot_3 && item_in_slot_3->CanAttach(pLaserr))
+        {
+            shared_str str = StringTable().translate("st_attach_laser_to_pistol");
+            str.printf("%s %s", str.c_str(), item_in_slot_3->m_name.c_str());
+            m_UIPropertiesBox->AddItem(str.c_str(), (void*)item_in_slot_3, INVENTORY_ATTACH_ADDON);
+            //			m_UIPropertiesBox->AddItem( "st_attach_grip_to_rifle",  (void*)item_in_slot_3,
             // INVENTORY_ATTACH_ADDON );
             b_show = true;
         }
@@ -1367,6 +2162,262 @@ void CUIActorMenu::ProcessPropertiesBoxClicked(CUIWindow* w, void* d)
             }
         }
         break;
+    case INVENTORY_DETACH_BARREL_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetBarrelName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetBarrelName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_CHARGS_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetChargsName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetChargsName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_BIPODS_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetBipodsName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetBipodsName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_CHARGH_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetCharghName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetCharghName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_FLIGHT_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetFlightName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetFlightName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_FGRIPS_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetFgripsName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetFgripsName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_GBLOCK_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetGblockName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetGblockName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_HGUARD_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetHguardName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetHguardName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_MAGAZN_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetMagaznName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetMagaznName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_MOUNTS_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetMountsName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetMountsName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_MUZZLE_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetMuzzleName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetMuzzleName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_RCIEVR_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetRcievrName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetRcievrName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_SIGHTS_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetSightsName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetSightsName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_SIGHTF_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetSightfName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetSightfName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_SIGHTR_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetSightrName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetSightrName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_GRIP_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetGripName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetGripName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
     case INVENTORY_DETACH_GRENADE_LAUNCHER_ADDON:
         if (weapon)
         {
@@ -1379,6 +2430,102 @@ void CUIActorMenu::ProcessPropertiesBoxClicked(CUIWindow* w, void* d)
                 if (child_iitm && wpn)
                 {
                     DetachAddon(wpn->GetGrenadeLauncherName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_SIGHT2_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetSight2Name().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetSight2Name().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_STOCKS_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetStocksName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetStocksName().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_TACTI1_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetTacti1Name().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetTacti1Name().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_ADAPT1_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetAdapt1Name().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetAdapt1Name().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_ADAPT2_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetAdapt1Name().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetAdapt1Name().c_str(), child_iitm);
+                }
+            }
+        }
+        break;
+    case INVENTORY_DETACH_LASERR_ADDON:
+        if (weapon)
+        {
+            DetachAddon(weapon->GetLaserrName().c_str());
+            for (u32 i = 0; i < cell_item->ChildsCount(); ++i)
+            {
+                CUICellItem* child_itm = cell_item->Child(i);
+                PIItem child_iitm = (PIItem)(child_itm->m_pData);
+                CWeapon* wpn = smart_cast<CWeapon*>(child_iitm);
+                if (child_iitm && wpn)
+                {
+                    DetachAddon(wpn->GetLaserrName().c_str(), child_iitm);
                 }
             }
         }

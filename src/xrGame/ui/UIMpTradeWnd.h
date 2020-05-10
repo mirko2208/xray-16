@@ -77,6 +77,7 @@ public:
         at_scope = 0x1,
         at_glauncher = 0x2,
         at_silencer = 0x4,
+        at_grip = 0x8,
     };
     enum _buy_flags
     {
@@ -163,6 +164,7 @@ private:
     CUI3tButton* m_btn_pistol_silencer;
     CUI3tButton* m_btn_rifle_ammo;
     CUI3tButton* m_btn_rifle_silencer;
+    CUI3tButton* m_btn_rifle_grip;
     CUI3tButton* m_btn_rifle_scope;
     CUI3tButton* m_btn_rifle_glauncher;
     CUI3tButton* m_btn_rifle_ammo2;
@@ -209,6 +211,7 @@ private:
     void xr_stdcall OnBtnPistolSilencerClicked(CUIWindow* w, void* d);
     void xr_stdcall OnBtnRifleAmmoClicked(CUIWindow* w, void* d);
     void xr_stdcall OnBtnRifleSilencerClicked(CUIWindow* w, void* d);
+    void xr_stdcall OnBtnRifleGripClicked(CUIWindow* w, void* d);
     void xr_stdcall OnBtnRifleScopeClicked(CUIWindow* w, void* d);
     void xr_stdcall OnBtnRifleGLClicked(CUIWindow* w, void* d);
     void xr_stdcall OnBtnRifleAmmo2Clicked(CUIWindow* w, void* d);

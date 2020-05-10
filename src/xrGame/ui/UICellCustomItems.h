@@ -43,7 +43,29 @@ public:
     {
         eSilencer = 0,
         eScope,
+        eGrip,
         eLauncher,
+        eBarrel,
+        eBipods,
+        eChargs,
+        eChargh,
+        eFlight,
+        eFgrips,
+        eGblock,
+        eHguard,
+        eMagazn,
+        eMounts,
+        eMuzzle,
+        eRcievr,
+        eSights,
+        eSightf,
+        eSightr,
+        eSight2,
+        eStocks,
+        eTacti1,
+        eAdapt1,
+        eAdapt2,
+        eLaserr,
         eMaxAddon
     };
 
@@ -57,6 +79,28 @@ protected:
     void InitAddon(CUIStatic* s, LPCSTR section, Fvector2 offset, bool use_heading);
     bool is_scope();
     bool is_silencer();
+    bool is_grip();
+    bool is_barrel();
+    bool is_bipods();
+    bool is_chargh();
+    bool is_chargs();
+    bool is_flight();
+    bool is_fgrips();
+    bool is_gblock();
+    bool is_hguard();
+    bool is_magazn();
+    bool is_mounts();
+    bool is_muzzle();
+    bool is_rcievr();
+    bool is_sights();
+    bool is_sightf();
+    bool is_sightr();
+    bool is_sight2();
+    bool is_stocks();
+    bool is_tacti1();
+    bool is_adapt1();
+    bool is_adapt2();
+    bool is_laserr();
     bool is_launcher();
 
 public:

@@ -405,10 +405,56 @@ public:
     bool Weapon_IsGrenadeLauncherAttached();
     bool Weapon_IsScopeAttached();
     bool Weapon_IsSilencerAttached();
+    bool Weapon_IsGripAttached();
+    bool Weapon_IsBarrelAttached();
+    bool Weapon_IsChargsAttached();
+    bool Weapon_IsCharghAttached();
+    bool Weapon_IsBipodsAttached();
+    bool Weapon_IsFlightAttached();
+    bool Weapon_IsFgripsAttached();
+    bool Weapon_IsGblockAttached();
+    bool Weapon_IsHguardAttached();
+    bool Weapon_IsMagaznAttached();
+    bool Weapon_IsMountsAttached();
+    bool Weapon_IsMuzzleAttached();
+    bool Weapon_IsRcievrAttached();
+    bool Weapon_IsSightsAttached();
+    bool Weapon_IsSightfAttached();
+    bool Weapon_IsSightrAttached();
+    bool Weapon_IsSight2Attached();
+    bool Weapon_IsStocksAttached();
+    bool Weapon_IsTacti1Attached();
+    bool Weapon_IsAdapt1Attached();
+    bool Weapon_IsAdapt2Attached();
+    bool Weapon_IsLaserrAttached();
+
 
     int Weapon_GrenadeLauncher_Status();
     int Weapon_Scope_Status();
     int Weapon_Silencer_Status();
+    int Weapon_Grip_Status();
+    int Weapon_Barrel_Status();
+    int Weapon_Chargs_Status();
+    int Weapon_Bipods_Status();
+    int Weapon_Chargh_Status();
+    int Weapon_Flight_Status();
+    int Weapon_Fgrips_Status();
+    int Weapon_Gblock_Status();
+    int Weapon_Hguard_Status();
+    int Weapon_Magazn_Status();
+    int Weapon_Mounts_Status();
+    int Weapon_Muzzle_Status();
+    int Weapon_Rcievr_Status();
+    int Weapon_Sights_Status();
+    int Weapon_Sightf_Status();
+    int Weapon_Sightr_Status();
+    int Weapon_Sight2_Status();
+    int Weapon_Stocks_Status();
+    int Weapon_Tacti1_Status();
+    int Weapon_Adapt1_Status();
+    int Weapon_Adapt2_Status();
+    int Weapon_Laserr_Status();
+
 
     LPCSTR ProfileName();
     LPCSTR CharacterName();

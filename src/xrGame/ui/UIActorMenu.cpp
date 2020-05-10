@@ -14,8 +14,31 @@
 #include "WeaponMagazinedWGrenade.h"
 #include "WeaponAmmo.h"
 #include "Silencer.h"
+#include "Grip.h"
+#include "Chargs.h"
+#include "Chargh.h"
+#include "Flight.h"
+#include "Fgrips.h"
+#include "Gblock.h"
+#include "Hguard.h"
+#include "Magazn.h"
+#include "Mounts.h"
+#include "Muzzle.h"
+#include "Rcievr.h"
+#include "Sights.h"
+#include "Sightf.h"
+#include "Sightr.h"
+#include "Sight2.h"
+#include "Stocks.h"
+#include "Tacti1.h"
+#include "Adapt1.h"
+#include "Adapt2.h"
+#include "Laserr.h"
+
+#include "Bipods.h"
 #include "Scope.h"
 #include "GrenadeLauncher.h"
+#include "Barrel.h"
 #include "trade_parameters.h"
 #include "ActorHelmet.h"
 #include "CustomOutfit.h"
@@ -781,7 +804,138 @@ bool CUIActorMenu::highlight_addons_for_weapon(PIItem weapon_item, CUICellItem* 
         ci->m_select_armament = true;
         return true;
     }
-
+    CBarrel* pBarrel = smart_cast<CBarrel*>(item);
+    if (pBarrel && weapon_item->CanAttach(pBarrel))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CGrip* pGrip = smart_cast<CGrip*>(item);
+    if (pGrip && weapon_item->CanAttach(pGrip))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CChargs* pChargs = smart_cast<CChargs*>(item);
+    if (pChargs && weapon_item->CanAttach(pChargs))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CBipods* pBipods = smart_cast<CBipods*>(item);
+    if (pBipods && weapon_item->CanAttach(pBipods))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CChargh* pChargh = smart_cast<CChargh*>(item);
+    if (pChargh && weapon_item->CanAttach(pChargh))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CFlight* pFlight = smart_cast<CFlight*>(item);
+    if (pFlight && weapon_item->CanAttach(pFlight))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CFgrips* pFgrips = smart_cast<CFgrips*>(item);
+    if (pFgrips && weapon_item->CanAttach(pFgrips))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CGblock* pGblock = smart_cast<CGblock*>(item);
+    if (pGblock && weapon_item->CanAttach(pGblock))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CHguard* pHguard = smart_cast<CHguard*>(item);
+    if (pHguard && weapon_item->CanAttach(pHguard))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CMagazn* pMagazn = smart_cast<CMagazn*>(item);
+    if (pMagazn && weapon_item->CanAttach(pMagazn))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CMounts* pMounts = smart_cast<CMounts*>(item);
+    if (pMounts && weapon_item->CanAttach(pMounts))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CMuzzle* pMuzzle = smart_cast<CMuzzle*>(item);
+    if (pMuzzle && weapon_item->CanAttach(pMuzzle))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CRcievr* pRcievr = smart_cast<CRcievr*>(item);
+    if (pRcievr && weapon_item->CanAttach(pRcievr))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CSights* pSights = smart_cast<CSights*>(item);
+    if (pSights && weapon_item->CanAttach(pSights))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CSightf* pSightf = smart_cast<CSightf*>(item);
+    if (pSightf && weapon_item->CanAttach(pSightf))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CSightr* pSightr = smart_cast<CSightr*>(item);
+    if (pSightr && weapon_item->CanAttach(pSightr))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CSight2* pSight2 = smart_cast<CSight2*>(item);
+    if (pSight2 && weapon_item->CanAttach(pSight2))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CStocks* pStocks = smart_cast<CStocks*>(item);
+    if (pStocks && weapon_item->CanAttach(pStocks))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CTacti1* pTacti1 = smart_cast<CTacti1*>(item);
+    if (pTacti1 && weapon_item->CanAttach(pTacti1))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CAdapt1* pAdapt1 = smart_cast<CAdapt1*>(item);
+    if (pAdapt1 && weapon_item->CanAttach(pAdapt1))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CAdapt2* pAdapt2 = smart_cast<CAdapt2*>(item);
+    if (pAdapt2 && weapon_item->CanAttach(pAdapt2))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
+    CLaserr* pLaserr = smart_cast<CLaserr*>(item);
+    if (pLaserr && weapon_item->CanAttach(pLaserr))
+    {
+        ci->m_select_armament = true;
+        return true;
+    }
     CGrenadeLauncher* pGrenadeLauncher = smart_cast<CGrenadeLauncher*>(item);
     if (pGrenadeLauncher && weapon_item->CanAttach(pGrenadeLauncher))
     {
@@ -798,9 +952,33 @@ void CUIActorMenu::highlight_weapons_for_addon(PIItem addon_item, CUIDragDropLis
 
     CScope* pScope = smart_cast<CScope*>(addon_item);
     CSilencer* pSilencer = smart_cast<CSilencer*>(addon_item);
+    CGrip* pGrip = smart_cast<CGrip*>(addon_item);
+    CBarrel* pBarrel = smart_cast<CBarrel*>(addon_item);
+    CChargs* pChargs = smart_cast<CChargs*>(addon_item);
+    CBipods* pBipods = smart_cast<CBipods*>(addon_item);
+    CChargh* pChargh = smart_cast<CChargh*>(addon_item);
+    CFlight* pFlight = smart_cast<CFlight*>(addon_item);
+    CFgrips* pFgrips = smart_cast<CFgrips*>(addon_item);
+    CGblock* pGblock = smart_cast<CGblock*>(addon_item);
+    CHguard* pHguard = smart_cast<CHguard*>(addon_item);
+    CMagazn* pMagazn = smart_cast<CMagazn*>(addon_item);
+    CMounts* pMounts = smart_cast<CMounts*>(addon_item);
+    CMuzzle* pMuzzle = smart_cast<CMuzzle*>(addon_item);
+    CRcievr* pRcievr = smart_cast<CRcievr*>(addon_item);
+    CSights* pSights = smart_cast<CSights*>(addon_item);
+    CSightf* pSightf = smart_cast<CSightf*>(addon_item);
+    CSightr* pSightr = smart_cast<CSightr*>(addon_item);
+    CSight2* pSight2 = smart_cast<CSight2*>(addon_item);
+    CStocks* pStocks = smart_cast<CStocks*>(addon_item);
+    CTacti1* pTacti1 = smart_cast<CTacti1*>(addon_item);
+    CAdapt1* pAdapt1 = smart_cast<CAdapt1*>(addon_item);
+    CAdapt2* pAdapt2 = smart_cast<CAdapt2*>(addon_item);
+    CLaserr* pLaserr = smart_cast<CLaserr*>(addon_item);
     CGrenadeLauncher* pGrenadeLauncher = smart_cast<CGrenadeLauncher*>(addon_item);
 
-    if (!pScope && !pSilencer && !pGrenadeLauncher)
+    if (!pScope && !pSilencer && !pGrenadeLauncher && !pBarrel && !pChargs && !pBipods && !pChargh && !pFlight &&
+        !pFgrips && !pGblock && !pHguard && !pMagazn && !pMounts && !pMuzzle && !pRcievr && !pSights && !pSightf &&
+        !pSightr && !pSight2 && !pStocks && !pTacti1 && !pAdapt1 && !pAdapt2 && !pLaserr)
     {
         return;
     }
@@ -830,7 +1008,117 @@ void CUIActorMenu::highlight_weapons_for_addon(PIItem addon_item, CUIDragDropLis
             ci->m_select_armament = true;
             continue;
         }
+        if (pBarrel && weapon->CanAttach(pBarrel))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pChargs && weapon->CanAttach(pChargs))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pBipods && weapon->CanAttach(pBipods))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pChargh && weapon->CanAttach(pChargh))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pFlight && weapon->CanAttach(pFlight))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pFgrips && weapon->CanAttach(pFgrips))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pGrip && weapon->CanAttach(pGrip))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pGblock && weapon->CanAttach(pGblock))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pHguard && weapon->CanAttach(pHguard))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pMagazn && weapon->CanAttach(pMagazn))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pMounts && weapon->CanAttach(pMounts))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pMuzzle && weapon->CanAttach(pMuzzle))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pRcievr && weapon->CanAttach(pRcievr))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pSights && weapon->CanAttach(pSights))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pSightf && weapon->CanAttach(pSightf))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pSightr && weapon->CanAttach(pSightr))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pSight2 && weapon->CanAttach(pSight2))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pStocks && weapon->CanAttach(pStocks))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pTacti1 && weapon->CanAttach(pTacti1))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pAdapt1 && weapon->CanAttach(pAdapt1))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
         if (pGrenadeLauncher && weapon->CanAttach(pGrenadeLauncher))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pAdapt2 && weapon->CanAttach(pAdapt2))
+        {
+            ci->m_select_armament = true;
+            continue;
+        }
+        if (pLaserr && weapon->CanAttach(pLaserr))
         {
             ci->m_select_armament = true;
             continue;

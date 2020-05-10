@@ -714,6 +714,29 @@ void CGameObject::spawn_supplies()
     bool bScope = false;
     bool bSilencer = false;
     bool bLauncher = false;
+    bool bGrip = false;
+    bool bBarrel = false;
+    bool bChargs = false;
+    bool bChargh = false;
+    bool bBipods = false;
+    bool bFlight = false;
+    bool bFgrips = false;
+    bool bGblock = false;
+    bool bHguard = false;
+    bool bMagazn = false;
+    bool bMounts = false;
+    bool bMuzzle = false;
+    bool bRcievr = false;
+    bool bSights = false;
+    bool bSightf = false;
+    bool bSightr = false;
+    bool bSight2 = false;
+    bool bStocks = false;
+    bool bTacti1 = false;
+    bool bAdapt1 = false;
+    bool bAdapt2 = false;
+    bool bLaserr = false;
+
 
     for (u32 k = 0, j; spawn_ini()->r_line("spawn", k, &N, &V); k++)
     {
@@ -742,6 +765,29 @@ void CGameObject::spawn_supplies()
                 bScope = (NULL != strstr(V, "scope"));
                 bSilencer = (NULL != strstr(V, "silencer"));
                 bLauncher = (NULL != strstr(V, "launcher"));
+                bGrip = (NULL != strstr(V, "Grip"));
+                bBarrel = (NULL != strstr(V, "Barrel"));
+                bChargs = (NULL != strstr(V, "Chargs"));
+                bChargh = (NULL != strstr(V, "Chargh"));
+                bBipods = (NULL != strstr(V, "Bipods"));
+                bFlight = (NULL != strstr(V, "Flight"));
+                bFgrips = (NULL != strstr(V, "Fgrips"));
+                bGblock = (NULL != strstr(V, "Gblock"));
+                bHguard = (NULL != strstr(V, "Hguard"));
+                bMagazn = (NULL != strstr(V, "Magazn"));
+                bMounts = (NULL != strstr(V, "Mounts"));
+                bMuzzle = (NULL != strstr(V, "Muzzle"));
+                bRcievr = (NULL != strstr(V, "Rcievr"));
+                bSights = (NULL != strstr(V, "Sights"));
+                bSightf = (NULL != strstr(V, "Sightf"));
+                bSightr = (NULL != strstr(V, "Sightr"));
+                bSight2 = (NULL != strstr(V, "Sight2"));
+                bStocks = (NULL != strstr(V, "Stocks"));
+                bTacti1 = (NULL != strstr(V, "Tacti1"));
+                bAdapt1 = (NULL != strstr(V, "Adapt1"));
+                bAdapt2 = (NULL != strstr(V, "Adapt2"));
+                bLaserr = (NULL != strstr(V, "Laserr"));
+
             }
             for (u32 i = 0; i < j; ++i)
             {
@@ -760,6 +806,48 @@ void CGameObject::spawn_supplies()
                             W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonScope, bScope);
                         if (W->m_silencer_status == ALife::eAddonAttachable)
                             W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonSilencer, bSilencer);
+                        if (W->m_grip_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonGrip, bGrip);
+                        if (W->m_barrel_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonBarrel, bBarrel);
+                        if (W->m_chargs_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonChargs, bChargs);
+                        if (W->m_chargh_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonChargh, bChargh);
+                        if (W->m_flight_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonFlight, bFlight);
+                        if (W->m_fgrips_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonFgrips, bFgrips);
+                        if (W->m_gblock_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonGblock, bGblock);
+                        if (W->m_hguard_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonHguard, bHguard);
+                        if (W->m_magazn_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonMagazn, bMagazn);
+                        if (W->m_mounts_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonMounts, bMounts);
+                        if (W->m_muzzle_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonMuzzle, bMuzzle);
+                        if (W->m_rcievr_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonRcievr, bRcievr);
+                        if (W->m_sights_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonSights, bSights);
+                        if (W->m_sightf_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonSightf, bSightf);
+                        if (W->m_sightr_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonSightr, bSightr);
+                        if (W->m_sight2_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonSight2, bSight2);
+                        if (W->m_stocks_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonStocks, bStocks);
+                        if (W->m_tacti1_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonTacti1, bTacti1);
+                        if (W->m_adapt1_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonAdapt1, bAdapt1);
+                        if (W->m_adapt2_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonAdapt2, bAdapt2);
+                        if (W->m_laserr_status == ALife::eAddonAttachable)
+                            W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonLaserr, bLaserr);
                         if (W->m_grenade_launcher_status == ALife::eAddonAttachable)
                             W->m_addon_flags.set(CSE_ALifeItemWeapon::eWeaponAddonGrenadeLauncher, bLauncher);
                     }

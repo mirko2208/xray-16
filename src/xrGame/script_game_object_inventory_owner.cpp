@@ -1176,6 +1176,291 @@ int CScriptGameObject::Weapon_Silencer_Status()
     return (int)weapon->get_SilencerStatus();
 }
 
+int CScriptGameObject::Weapon_Grip_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Grip_Status!");
+        return (false);
+    }
+    return (int)weapon->get_GripStatus();
+}
+
+
+int CScriptGameObject::Weapon_Barrel_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Barrel_Status!");
+        return (false);
+    }
+    return (int)weapon->get_BarrelStatus();
+}
+
+
+int CScriptGameObject::Weapon_Bipods_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Bipods_Status!");
+        return (false);
+    }
+    return (int)weapon->get_BipodsStatus();
+}
+
+
+int CScriptGameObject::Weapon_Chargs_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Chargs_Status!");
+        return (false);
+    }
+    return (int)weapon->get_ChargsStatus();
+}
+
+
+int CScriptGameObject::Weapon_Chargh_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Chargh_Status!");
+        return (false);
+    }
+    return (int)weapon->get_CharghStatus();
+}
+
+
+int CScriptGameObject::Weapon_Flight_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Flight_Status!");
+        return (false);
+    }
+    return (int)weapon->get_FlightStatus();
+}
+
+
+int CScriptGameObject::Weapon_Fgrips_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Fgrips_Status!");
+        return (false);
+    }
+    return (int)weapon->get_FgripsStatus();
+}
+
+
+int CScriptGameObject::Weapon_Gblock_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Gblock_Status!");
+        return (false);
+    }
+    return (int)weapon->get_GblockStatus();
+}
+
+
+int CScriptGameObject::Weapon_Hguard_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Hguard_Status!");
+        return (false);
+    }
+    return (int)weapon->get_HguardStatus();
+}
+
+
+int CScriptGameObject::Weapon_Magazn_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Magazn_Status!");
+        return (false);
+    }
+    return (int)weapon->get_MagaznStatus();
+}
+
+
+int CScriptGameObject::Weapon_Mounts_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Mounts_Status!");
+        return (false);
+    }
+    return (int)weapon->get_MountsStatus();
+}
+
+
+int CScriptGameObject::Weapon_Muzzle_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Muzzle_Status!");
+        return (false);
+    }
+    return (int)weapon->get_MuzzleStatus();
+}
+
+
+int CScriptGameObject::Weapon_Rcievr_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Rcievr_Status!");
+        return (false);
+    }
+    return (int)weapon->get_RcievrStatus();
+}
+
+
+
+int CScriptGameObject::Weapon_Sightf_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Sightf_Status!");
+        return (false);
+    }
+    return (int)weapon->get_SightfStatus();
+}
+
+int CScriptGameObject::Weapon_Sights_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Sights_Status!");
+        return (false);
+    }
+    return (int)weapon->get_SightsStatus();
+}
+
+int CScriptGameObject::Weapon_Sightr_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Sightr_Status!");
+        return (false);
+    }
+    return (int)weapon->get_SightrStatus();
+}
+
+
+int CScriptGameObject::Weapon_Sight2_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Sight2_Status!");
+        return (false);
+    }
+    return (int)weapon->get_Sight2Status();
+}
+
+
+int CScriptGameObject::Weapon_Stocks_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Stocks_Status!");
+        return (false);
+    }
+    return (int)weapon->get_StocksStatus();
+}
+
+
+int CScriptGameObject::Weapon_Tacti1_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Tacti1_Status!");
+        return (false);
+    }
+    return (int)weapon->get_Tacti1Status();
+}
+
+
+int CScriptGameObject::Weapon_Adapt1_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Adapt1_Status!");
+        return (false);
+    }
+    return (int)weapon->get_Adapt1Status();
+}
+
+
+int CScriptGameObject::Weapon_Adapt2_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Adapt2_Status!");
+        return (false);
+    }
+    return (int)weapon->get_Adapt2Status();
+}
+
+int CScriptGameObject::Weapon_Laserr_Status()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_Laserr_Status!");
+        return (false);
+    }
+    return (int)weapon->get_LaserrStatus();
+}
+
+
+
 bool CScriptGameObject::Weapon_IsGrenadeLauncherAttached()
 {
     CWeapon* weapon = smart_cast<CWeapon*>(&object());
@@ -1211,6 +1496,251 @@ bool CScriptGameObject::Weapon_IsSilencerAttached()
     }
     return weapon->IsSilencerAttached();
 }
+
+bool CScriptGameObject::Weapon_IsGripAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsGripAttached!");
+        return (false);
+    }
+    return weapon->IsGripAttached();
+}
+
+bool CScriptGameObject::Weapon_IsBarrelAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsBarrelAttached!");
+        return (false);
+    }
+    return weapon->IsBarrelAttached();
+}
+bool CScriptGameObject::Weapon_IsBipodsAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsBipodsAttached!");
+        return (false);
+    }
+    return weapon->IsBipodsAttached();
+}
+bool CScriptGameObject::Weapon_IsCharghAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsCharghAttached!");
+        return (false);
+    }
+    return weapon->IsCharghAttached();
+}
+bool CScriptGameObject::Weapon_IsChargsAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsChargsAttached!");
+        return (false);
+    }
+    return weapon->IsChargsAttached();
+}
+bool CScriptGameObject::Weapon_IsFlightAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsFlightAttached!");
+        return (false);
+    }
+    return weapon->IsFlightAttached();
+}
+bool CScriptGameObject::Weapon_IsFgripsAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsFgripsAttached!");
+        return (false);
+    }
+    return weapon->IsFgripsAttached();
+}
+bool CScriptGameObject::Weapon_IsGblockAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsGblockAttached!");
+        return (false);
+    }
+    return weapon->IsGblockAttached();
+}
+bool CScriptGameObject::Weapon_IsHguardAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsHguardAttached!");
+        return (false);
+    }
+    return weapon->IsHguardAttached();
+}
+bool CScriptGameObject::Weapon_IsMagaznAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsMagaznAttached!");
+        return (false);
+    }
+    return weapon->IsMagaznAttached();
+}
+bool CScriptGameObject::Weapon_IsMountsAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsMountsAttached!");
+        return (false);
+    }
+    return weapon->IsMountsAttached();
+}
+bool CScriptGameObject::Weapon_IsMuzzleAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsMuzzleAttached!");
+        return (false);
+    }
+    return weapon->IsMuzzleAttached();
+}
+bool CScriptGameObject::Weapon_IsRcievrAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsRcievrAttached!");
+        return (false);
+    }
+    return weapon->IsRcievrAttached();
+}
+bool CScriptGameObject::Weapon_IsSightsAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsSightsAttached!");
+        return (false);
+    }
+    return weapon->IsSightsAttached();
+}
+bool CScriptGameObject::Weapon_IsSightfAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsSightfAttached!");
+        return (false);
+    }
+    return weapon->IsSightfAttached();
+}
+bool CScriptGameObject::Weapon_IsSightrAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsSightrAttached!");
+        return (false);
+    }
+    return weapon->IsSightrAttached();
+}
+bool CScriptGameObject::Weapon_IsSight2Attached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsSight2Attached!");
+        return (false);
+    }
+    return weapon->IsSight2Attached();
+}
+bool CScriptGameObject::Weapon_IsStocksAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsStocksAttached!");
+        return (false);
+    }
+    return weapon->IsStocksAttached();
+}
+bool CScriptGameObject::Weapon_IsTacti1Attached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsTacti1Attached!");
+        return (false);
+    }
+    return weapon->IsTacti1Attached();
+}
+bool CScriptGameObject::Weapon_IsAdapt1Attached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsAdapt1Attached!");
+        return (false);
+    }
+    return weapon->IsAdapt1Attached();
+}
+bool CScriptGameObject::Weapon_IsAdapt2Attached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsAdapt2Attached!");
+        return (false);
+    }
+    return weapon->IsAdapt2Attached();
+}
+bool CScriptGameObject::Weapon_IsLaserrAttached()
+{
+    CWeapon* weapon = smart_cast<CWeapon*>(&object());
+    if (!weapon)
+    {
+        GEnv.ScriptEngine->script_log(
+            LuaMessageType::Error, "CWeapon : cannot access class member Weapon_IsLaserrAttached!");
+        return (false);
+    }
+    return weapon->IsLaserrAttached();
+}
+
 
 void CScriptGameObject::AllowSprint(bool b) { Actor()->SetCantRunState(!b); }
 int CScriptGameObject::animation_slot() const

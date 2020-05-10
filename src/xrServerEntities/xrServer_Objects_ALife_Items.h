@@ -171,29 +171,74 @@ public:
     //текущее состояние аддонов
     enum EWeaponAddonState
     {
-        eWeaponAddonScope = 0x01,
-        eWeaponAddonGrenadeLauncher = 0x02,
-        eWeaponAddonSilencer = 0x04
+        eWeaponAddonScope = 1 << 0,
+        eWeaponAddonGrenadeLauncher = 1 << 1,
+        eWeaponAddonSilencer = 1 << 2, 
+        eWeaponAddonGrip = 1 << 3,
+        eWeaponAddonBarrel = 1 << 4,
+        eWeaponAddonBipods = 1 << 5,
+        eWeaponAddonChargs = 1 << 6,
+        eWeaponAddonChargh = 1 << 7,
+        eWeaponAddonFlight = 1 << 8,
+        eWeaponAddonFgrips = 1 << 9,
+        eWeaponAddonGblock = 1 << 10,
+        eWeaponAddonHguard = 1 << 11,
+        eWeaponAddonMagazn = 1 << 12,
+        eWeaponAddonMounts = 1 << 13,
+        eWeaponAddonMuzzle = 1 << 14,
+        eWeaponAddonRcievr = 1 << 15,
+        eWeaponAddonSights = 1 << 16,
+        eWeaponAddonSightf = 1 << 17,
+        eWeaponAddonSightr = 1 << 18,
+        eWeaponAddonSight2 = 1 << 19,
+        eWeaponAddonStocks = 1 << 20,
+        eWeaponAddonTacti1 = 1 << 21,
+        eWeaponAddonAdapt1 = 1 << 22,
+        eWeaponAddonAdapt2 = 1 << 23,
+        eWeaponAddonLaserr = 1 << 24,
     };
 
     EWeaponAddonStatus m_scope_status;
     EWeaponAddonStatus m_silencer_status;
     EWeaponAddonStatus m_grenade_launcher_status;
+    EWeaponAddonStatus m_barrel_status;
+    EWeaponAddonStatus m_bipods_status;
+    EWeaponAddonStatus m_chargs_status;
+    EWeaponAddonStatus m_chargh_status;
+    EWeaponAddonStatus m_flight_status;
+    EWeaponAddonStatus m_fgrips_status;
+    EWeaponAddonStatus m_gblock_status;
+    EWeaponAddonStatus m_hguard_status;
+    EWeaponAddonStatus m_magazn_status;
+    EWeaponAddonStatus m_mounts_status;
+    EWeaponAddonStatus m_muzzle_status;
+    EWeaponAddonStatus m_rcievr_status;
+    EWeaponAddonStatus m_sights_status;
+    EWeaponAddonStatus m_sightf_status;
+    EWeaponAddonStatus m_sightr_status;
+    EWeaponAddonStatus m_sight2_status;
+    EWeaponAddonStatus m_stocks_status;
+    EWeaponAddonStatus m_tacti1_status;
+    EWeaponAddonStatus m_adapt1_status;
+    EWeaponAddonStatus m_adapt2_status;
+    EWeaponAddonStatus m_laserr_status;
+    EWeaponAddonStatus m_grip_status;
+
 
     u32 timestamp;
-    u8 wpn_flags;
-    u8 wpn_state;
-    u8 ammo_type;
+    u32 wpn_flags;
+    u32 wpn_state;
+    u32 ammo_type;
     u16 a_current;
     u16 a_elapsed;
     // count of grenades to spawn in grenade launcher [ttcccccc]
     // WARNING! hight 2 bits (tt bits) indicate type of grenade, so maximum grenade count is 2^6 = 64
     struct grenade_count_t
     {
-        u8 grenades_count : 6;
-        u8 grenades_type : 2;
-        u8 pack_to_byte() const { return (grenades_type << 6) | grenades_count; }
-        void unpack_from_byte(u8 const b)
+        u32 grenades_count : 6;
+        u32 grenades_type : 2;
+        u32 pack_to_byte() const { return (grenades_type << 6) | grenades_count; }
+        void unpack_from_byte(u32 const b)
         {
             grenades_type = (b >> 6);
             grenades_count = b & 0x3f; // 111111
@@ -205,8 +250,8 @@ public:
     ALife::EHitType m_tHitType;
     LPCSTR m_caAmmoSections;
     u32 m_dwAmmoAvailable;
-    Flags8 m_addon_flags;
-    u8 m_bZoom;
+    Flags32 m_addon_flags;
+    u32 m_bZoom;
     u32 m_ef_main_weapon_type;
     u32 m_ef_weapon_type;
 
@@ -215,11 +260,11 @@ public:
     virtual void OnEvent(NET_Packet& P, u16 type, u32 time, ClientID sender);
     virtual u32 ef_main_weapon_type() const;
     virtual u32 ef_weapon_type() const;
-    u8 get_slot();
-    u16 get_ammo_limit();
-    u16 get_ammo_total();
-    u16 get_ammo_elapsed();
-    u16 get_ammo_magsize();
+    u32 get_slot();
+    u32 get_ammo_limit();
+    u32 get_ammo_total();
+    u32 get_ammo_elapsed();
+    u32 get_ammo_magsize();
     void clone_addons(CSE_ALifeItemWeapon* parent);
 
     virtual BOOL Net_Relevant();
@@ -227,7 +272,7 @@ public:
     virtual CSE_ALifeItemWeapon* cast_item_weapon() { return this; }
     virtual void UPDATE_Read(NET_Packet& P);
     virtual void UPDATE_Write(NET_Packet& P);
-    virtual void STATE_Read(NET_Packet& P, u16 size);
+    virtual void STATE_Read(NET_Packet& P, u32 size);
     virtual void STATE_Write(NET_Packet& P);
     SERVER_ENTITY_EDITOR_METHODS
 };
@@ -237,7 +282,7 @@ class CSE_ALifeItemWeaponMagazined : public CSE_ALifeItemWeapon
     typedef CSE_ALifeItemWeapon inherited;
 
 public:
-    u8 m_u8CurFireMode;
+    u32 m_u32CurFireMode;
     CSE_ALifeItemWeaponMagazined(LPCSTR caSection);
     virtual ~CSE_ALifeItemWeaponMagazined();
 
@@ -271,14 +316,14 @@ class CSE_ALifeItemWeaponShotGun : public CSE_ALifeItemWeaponMagazined
     using inherited = CSE_ALifeItemWeaponMagazined;
 
 public:
-    xr_vector<u8> m_AmmoIDs;
+    xr_vector<u32> m_AmmoIDs;
     CSE_ALifeItemWeaponShotGun(LPCSTR caSection);
     virtual ~CSE_ALifeItemWeaponShotGun();
 
     virtual CSE_ALifeItemWeapon* cast_item_weapon() { return this; }
     virtual void UPDATE_Read(NET_Packet& P);
     virtual void UPDATE_Write(NET_Packet& P);
-    virtual void STATE_Read(NET_Packet& P, u16 size);
+    virtual void STATE_Read(NET_Packet& P, u32 size);
     virtual void STATE_Write(NET_Packet& P);
     SERVER_ENTITY_EDITOR_METHODS
 };

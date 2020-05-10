@@ -136,6 +136,7 @@ void attachable_hud_item::set_bone_visible(const shared_str& bone_name, BOOL bVi
                          bone_name.c_str())
                          .c_str());
     }
+   /* if (bCheckVisibility) == FALSE || m_model->LL_GetBoneVisible(bone_id) != bVisibility)*/
     bVisibleNow = m_model->LL_GetBoneVisible(bone_id);
     if (bVisibleNow != bVisibility)
         m_model->LL_SetBoneVisible(bone_id, bVisibility, TRUE);
