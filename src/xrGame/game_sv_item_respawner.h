@@ -52,7 +52,7 @@ private:
     u32 load_section_items(CInifile& ini, const char* section_name, section_items* items);
     void clear_respawn_sections();
 
-    CSE_Abstract* make_respawn_entity(shared_str const& section_name, u8 addons, u16 count_of_ammo);
+    CSE_Abstract* make_respawn_entity(shared_str const& section_name, u32 addons, u16 count_of_ammo);
 
     xr_set<u16> level_items_respawn;
     void clear_level_items();

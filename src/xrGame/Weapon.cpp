@@ -768,7 +768,7 @@ void CWeapon::net_Export(NET_Packet& P)
     u8 need_upd = IsUpdating() ? 1 : 0;
     P.w_u8(need_upd);
     P.w_u16(u16(iAmmoElapsed));
-    P.w_u8(m_flagsAddOnState);
+    P.w_u32(m_flagsAddOnState);
     P.w_u8(m_ammoType);
     P.w_u8((u8)GetState());
     P.w_u8((u8)IsZoomed());
@@ -788,8 +788,8 @@ void CWeapon::net_Import(NET_Packet& P)
     u16 ammo_elapsed = 0;
     P.r_u16(ammo_elapsed);
 
-    u8 NewAddonState;
-    P.r_u8(NewAddonState);
+    u32 NewAddonState;
+    P.r_u32(NewAddonState);
 
     m_flagsAddOnState = NewAddonState;
     UpdateAddonsVisibility();
@@ -867,7 +867,7 @@ void CWeapon::OnEvent(NET_Packet& P, u16 type)
     {
     case GE_ADDON_CHANGE:
     {
-        P.r_u8(m_flagsAddOnState);
+        P.r_u32(m_flagsAddOnState);
         InitAddons();
         UpdateAddonsVisibility();
     }
@@ -1306,7 +1306,7 @@ int CWeapon::GetSuitableAmmoTotal(bool use_item_to_spawn) const
     return ae_count + m_iAmmoCurrentTotal;
 }
 
-int CWeapon::GetAmmoCount(u32 ammo_type) const
+int CWeapon::GetAmmoCount(u8 ammo_type) const
 {
     VERIFY(m_pInventory);
     R_ASSERT(ammo_type < m_ammoTypes.size());

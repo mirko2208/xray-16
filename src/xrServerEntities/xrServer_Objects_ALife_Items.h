@@ -226,18 +226,18 @@ public:
 
 
     u32 timestamp;
-    u32 wpn_flags;
-    u32 wpn_state;
-    u32 ammo_type;
+    u8 wpn_flags;
+    u8 wpn_state;
+    u8 ammo_type;
     u16 a_current;
     u16 a_elapsed;
     // count of grenades to spawn in grenade launcher [ttcccccc]
     // WARNING! hight 2 bits (tt bits) indicate type of grenade, so maximum grenade count is 2^6 = 64
     struct grenade_count_t
     {
-        u32 grenades_count : 6;
-        u32 grenades_type : 2;
-        u32 pack_to_byte() const { return (grenades_type << 6) | grenades_count; }
+        u8 grenades_count : 6;
+        u8 grenades_type : 2;
+        u8 pack_to_byte() const { return (grenades_type << 6) | grenades_count; }
         void unpack_from_byte(u32 const b)
         {
             grenades_type = (b >> 6);
@@ -249,9 +249,9 @@ public:
     float m_fHitPower;
     ALife::EHitType m_tHitType;
     LPCSTR m_caAmmoSections;
-    u32 m_dwAmmoAvailable;
+    u8 m_dwAmmoAvailable;
     Flags32 m_addon_flags;
-    u32 m_bZoom;
+    u8 m_bZoom;
     u32 m_ef_main_weapon_type;
     u32 m_ef_weapon_type;
 
@@ -260,11 +260,11 @@ public:
     virtual void OnEvent(NET_Packet& P, u16 type, u32 time, ClientID sender);
     virtual u32 ef_main_weapon_type() const;
     virtual u32 ef_weapon_type() const;
-    u32 get_slot();
-    u32 get_ammo_limit();
-    u32 get_ammo_total();
-    u32 get_ammo_elapsed();
-    u32 get_ammo_magsize();
+    u8 get_slot();
+    u16 get_ammo_limit();
+    u16 get_ammo_total();
+    u16 get_ammo_elapsed();
+    u16 get_ammo_magsize();
     void clone_addons(CSE_ALifeItemWeapon* parent);
 
     virtual BOOL Net_Relevant();
@@ -282,7 +282,7 @@ class CSE_ALifeItemWeaponMagazined : public CSE_ALifeItemWeapon
     typedef CSE_ALifeItemWeapon inherited;
 
 public:
-    u32 m_u32CurFireMode;
+    u32 m_u8CurFireMode;
     CSE_ALifeItemWeaponMagazined(LPCSTR caSection);
     virtual ~CSE_ALifeItemWeaponMagazined();
 
@@ -323,7 +323,7 @@ public:
     virtual CSE_ALifeItemWeapon* cast_item_weapon() { return this; }
     virtual void UPDATE_Read(NET_Packet& P);
     virtual void UPDATE_Write(NET_Packet& P);
-    virtual void STATE_Read(NET_Packet& P, u32 size);
+    virtual void STATE_Read(NET_Packet& P, u16 size);
     virtual void STATE_Write(NET_Packet& P);
     SERVER_ENTITY_EDITOR_METHODS
 };

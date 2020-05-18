@@ -106,7 +106,7 @@
 //-----------------------------------------------------------------------------
 // Weapons Add-ons
 #define CLSID_OBJECT_W_SCOPE MK_CLSID('W', '_', 'S', 'C', 'O', 'P', 'E', ' ')
-#define CLSID_OBJECT_W_SILENCER MK_CLSID('W', '_', 'S', 'I', 'L', 'E', 'N', 'C')
+#define CLSID_OBJECT_W_SILENC MK_CLSID('W', '_', 'S', 'I', 'L', 'E', 'N', 'C')
 #define CLSID_OBJECT_W_GLAUNCHER MK_CLSID('W', '_', 'G', 'L', 'A', 'U', 'N', 'C')
 #define CLSID_OBJECT_W_GRIP MK_CLSID('W', '_', 'G', 'R', 'I', 'P', ' ', ' ')
 #define CLSID_OBJECT_W_BARREL MK_CLSID('W', '_', 'B', 'A', 'R', 'R', 'E', 'L')

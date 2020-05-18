@@ -301,11 +301,11 @@ public:
     const shared_str& GetLaserrName() const { return m_sLaserrName; }
     const shared_str& GetGripName() const { return m_sGripName; }
     IC void ForceUpdateAmmo() { m_BriefInfo_CalcFrame = 0; }
-    u8 GetAddonsState() const { return m_flagsAddOnState; };
-    void SetAddonsState(u8 st) { m_flagsAddOnState = st; } // dont use!!! for buy menu only!!!
+    u32 GetAddonsState() const { return m_flagsAddOnState; };
+    void SetAddonsState(u32 st) { m_flagsAddOnState = st; } // dont use!!! for buy menu only!!!
 protected:
     //состояние подключенных аддонов
-    u8 m_flagsAddOnState;
+    u32 m_flagsAddOnState;
 
     //возможность подключения различных аддонов
     ALife::EWeaponAddonStatus m_eScopeStatus;
@@ -610,7 +610,7 @@ protected:
     CParticlesObject* m_pFlameParticles2;
 
 protected:
-    int GetAmmoCount(u32 ammo_type) const;
+    int GetAmmoCount(u8 ammo_type) const;
 
 public:
     IC int GetAmmoElapsed() const { return /*int(m_magazine.size())*/ iAmmoElapsed; }

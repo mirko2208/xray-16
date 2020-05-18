@@ -100,10 +100,10 @@ public:
         B.count = 0;
         INI_W(move_begin());
     }
-    IC void w_begin(u32 type)
+    IC void w_begin(u16 type)
     {
         B.count = 0;
-        w_u32(type);
+        w_u16(type);
     }
 
     struct W_guard
