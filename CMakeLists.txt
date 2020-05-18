@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 2.8.0)
+# Redirecting the default installation path /usr/local to /usr no need to use -DCMAKE_INSTALL_PREFIX =/usr
+set(CMAKE_INSTALL_PREFIX /usr)
 project(OpenXRay)
+
+# Installation paths
+include(GNUInstallDirs)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 include(${PROJECT_SOURCE_DIR}/cmake/utils.cmake)
@@ -20,14 +25,13 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "e2k")
 endif()
 
 if(NOT WIN32)
-	set(CMAKE_INSTALL_PREFIX "") # Skip all *nix-style installing for a while. Use DESTDIR
     IF(EXISTS "${CMAKE_ROOT}/Modules/CPack.cmake")
         set(CPACK_PACKAGE_NAME "openxray")
         set(CPACK_FILE_NAME "openxray")
         set(CPACK_DEBIAN_FILE_NAME "DEB-DEFAULT")
         set(CPACK_PACKAGE_VERSION "1.6.02")
-        set(CPACK_PACKAGE_CONTACT "lya Orlov <eagleivg@mail.ru>")
-        set(CPACK_PACKAGE_DESCRIPTION "X-Ray Engine 1.6 expansion")
+        set(CPACK_PACKAGE_CONTACT "OpenXRay <openxray@yahoo.com>")
+        set(CPACK_PACKAGE_DESCRIPTION "OpenXRay is an improved version of the X-Ray Engine, the game engine used in the world-famous S.T.A.L.K.E.R. game series by GSC Game World.")
         set(CPACK_PACKAGE_DESCRIPTION_SUMMARY ${CPACK_PACKAGE_DESCRIPTION})
         set(CPACK_DEBIAN_PACKAGE_SECTION "games")
         set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/OpenXRay/xray-16")
@@ -232,4 +236,12 @@ if (UNIX)
 
         add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
     endif()
+endif()
+
+get_property(LIB64 GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS)
+
+if ("${LIB64}" STREQUAL "TRUE")
+    set(LIBSUFFIX 64)
+else()
+    set(LIBSUFFIX "")
 endif()
