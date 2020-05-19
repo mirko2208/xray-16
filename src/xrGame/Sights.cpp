@@ -9,7 +9,7 @@
 
 CSights::CSights() {}
 CSights::~CSights() {}
-BOOL CSights::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CSights::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CSights::Load(LPCSTR section) { inherited::Load(section); }
 void CSights::net_Destroy() { inherited::net_Destroy(); }
 void CSights::UpdateCL() { inherited::UpdateCL(); }

@@ -9,7 +9,7 @@
 
 CRcievr::CRcievr() {}
 CRcievr::~CRcievr() {}
-BOOL CRcievr::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CRcievr::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CRcievr::Load(LPCSTR section) { inherited::Load(section); }
 void CRcievr::net_Destroy() { inherited::net_Destroy(); }
 void CRcievr::UpdateCL() { inherited::UpdateCL(); }

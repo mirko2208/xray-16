@@ -9,7 +9,7 @@
 
 CHguard::CHguard() {}
 CHguard::~CHguard() {}
-BOOL CHguard::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CHguard::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CHguard::Load(LPCSTR section) { inherited::Load(section); }
 void CHguard::net_Destroy() { inherited::net_Destroy(); }
 void CHguard::UpdateCL() { inherited::UpdateCL(); }

@@ -9,7 +9,7 @@
 
 CGrip::CGrip() {}
 CGrip::~CGrip() {}
-BOOL CGrip::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CGrip::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CGrip::Load(LPCSTR section) { inherited::Load(section); }
 void CGrip::net_Destroy() { inherited::net_Destroy(); }
 void CGrip::UpdateCL() { inherited::UpdateCL(); }

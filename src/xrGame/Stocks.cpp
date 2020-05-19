@@ -9,7 +9,7 @@
 
 CStocks::CStocks() {}
 CStocks::~CStocks() {}
-BOOL CStocks::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CStocks::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CStocks::Load(LPCSTR section) { inherited::Load(section); }
 void CStocks::net_Destroy() { inherited::net_Destroy(); }
 void CStocks::UpdateCL() { inherited::UpdateCL(); }

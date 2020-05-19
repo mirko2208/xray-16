@@ -9,7 +9,7 @@
 
 CMagazn::CMagazn() {}
 CMagazn::~CMagazn() {}
-BOOL CMagazn::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CMagazn::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CMagazn::Load(LPCSTR section) { inherited::Load(section); }
 void CMagazn::net_Destroy() { inherited::net_Destroy(); }
 void CMagazn::UpdateCL() { inherited::UpdateCL(); }

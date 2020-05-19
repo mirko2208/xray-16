@@ -9,7 +9,7 @@
 
 CGblock::CGblock() {}
 CGblock::~CGblock() {}
-BOOL CGblock::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CGblock::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CGblock::Load(LPCSTR section) { inherited::Load(section); }
 void CGblock::net_Destroy() { inherited::net_Destroy(); }
 void CGblock::UpdateCL() { inherited::UpdateCL(); }

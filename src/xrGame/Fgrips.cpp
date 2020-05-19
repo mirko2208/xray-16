@@ -9,7 +9,7 @@
 
 CFgrips::CFgrips() {}
 CFgrips::~CFgrips() {}
-BOOL CFgrips::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CFgrips::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CFgrips::Load(LPCSTR section) { inherited::Load(section); }
 void CFgrips::net_Destroy() { inherited::net_Destroy(); }
 void CFgrips::UpdateCL() { inherited::UpdateCL(); }

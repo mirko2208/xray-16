@@ -9,7 +9,7 @@
 
 CChargh::CChargh() {}
 CChargh::~CChargh() {}
-BOOL CChargh::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CChargh::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CChargh::Load(LPCSTR section) { inherited::Load(section); }
 void CChargh::net_Destroy() { inherited::net_Destroy(); }
 void CChargh::UpdateCL() { inherited::UpdateCL(); }

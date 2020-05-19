@@ -9,7 +9,7 @@
 
 CBipods::CBipods() {}
 CBipods::~CBipods() {}
-BOOL CBipods::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CBipods::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CBipods::Load(LPCSTR section) { inherited::Load(section); }
 void CBipods::net_Destroy() { inherited::net_Destroy(); }
 void CBipods::UpdateCL() { inherited::UpdateCL(); }

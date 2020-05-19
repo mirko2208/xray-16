@@ -9,7 +9,7 @@
 
 CFlight::CFlight() {}
 CFlight::~CFlight() {}
-BOOL CFlight::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CFlight::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CFlight::Load(LPCSTR section) { inherited::Load(section); }
 void CFlight::net_Destroy() { inherited::net_Destroy(); }
 void CFlight::UpdateCL() { inherited::UpdateCL(); }

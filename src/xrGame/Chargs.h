@@ -15,7 +15,7 @@ public:
     CChargs(void);
     virtual ~CChargs(void);
 
-    virtual BOOL net_Spawn(CSE_Abstract* DC);
+    virtual bool net_Spawn(CSE_Abstract* DC);
     virtual void Load(LPCSTR section);
     virtual void net_Destroy();
 

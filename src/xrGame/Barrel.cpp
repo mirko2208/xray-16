@@ -9,7 +9,7 @@
 
 CBarrel::CBarrel() {}
 CBarrel::~CBarrel() {}
-BOOL CBarrel::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CBarrel::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CBarrel::Load(LPCSTR section) { inherited::Load(section); }
 void CBarrel::net_Destroy() { inherited::net_Destroy(); }
 void CBarrel::UpdateCL() { inherited::UpdateCL(); }

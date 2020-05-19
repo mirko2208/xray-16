@@ -9,7 +9,7 @@
 
 CSightr::CSightr() {}
 CSightr::~CSightr() {}
-BOOL CSightr::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CSightr::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CSightr::Load(LPCSTR section) { inherited::Load(section); }
 void CSightr::net_Destroy() { inherited::net_Destroy(); }
 void CSightr::UpdateCL() { inherited::UpdateCL(); }

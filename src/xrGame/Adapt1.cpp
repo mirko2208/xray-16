@@ -9,7 +9,7 @@
 
 CAdapt1::CAdapt1() {}
 CAdapt1::~CAdapt1() {}
-BOOL CAdapt1::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CAdapt1::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CAdapt1::Load(LPCSTR section) { inherited::Load(section); }
 void CAdapt1::net_Destroy() { inherited::net_Destroy(); }
 void CAdapt1::UpdateCL() { inherited::UpdateCL(); }

@@ -338,9 +338,9 @@ void CObjectFactory::register_classes()
 
     // Weapons Add-on
     ADD(CScope, CSE_ALifeItem, TEXT2CLSID("W_SCOPE"), "wpn_scope");
-    ADD(CSilencer, CSE_ALifeItem, TEXT2CLSID("W_SILENCER"), "wpn_silencer");
+    ADD(CSilencer, CSE_ALifeItem, TEXT2CLSID("W_SILENC"), "wpn_silencer");
     ADD(CGrip, CSE_ALifeItem, TEXT2CLSID("W_GRIP"), "wpn_grip");
-    ADD(CFgrips, CSE_ALifeItem, TEXT2CLSID("W_GRIP"), "wpn_fgrips");
+    ADD(CFgrips, CSE_ALifeItem, TEXT2CLSID("W_FGRIPS"), "wpn_fgrips");
     ADD(CBarrel, CSE_ALifeItem, TEXT2CLSID("W_BARREL"), "wpn_barrel");
     ADD(CChargs, CSE_ALifeItem, TEXT2CLSID("W_CHARGS"), "wpn_chargs");
     ADD(CBipods, CSE_ALifeItem, TEXT2CLSID("W_BIPODS"), "wpn_bipods");

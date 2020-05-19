@@ -9,7 +9,7 @@
 
 CLaserr::CLaserr() {}
 CLaserr::~CLaserr() {}
-BOOL CLaserr::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CLaserr::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CLaserr::Load(LPCSTR section) { inherited::Load(section); }
 void CLaserr::net_Destroy() { inherited::net_Destroy(); }
 void CLaserr::UpdateCL() { inherited::UpdateCL(); }

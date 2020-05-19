@@ -9,7 +9,7 @@
 
 CMounts::CMounts() {}
 CMounts::~CMounts() {}
-BOOL CMounts::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CMounts::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CMounts::Load(LPCSTR section) { inherited::Load(section); }
 void CMounts::net_Destroy() { inherited::net_Destroy(); }
 void CMounts::UpdateCL() { inherited::UpdateCL(); }

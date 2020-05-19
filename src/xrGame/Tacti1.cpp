@@ -9,7 +9,7 @@
 
 CTacti1::CTacti1() {}
 CTacti1::~CTacti1() {}
-BOOL CTacti1::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CTacti1::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CTacti1::Load(LPCSTR section) { inherited::Load(section); }
 void CTacti1::net_Destroy() { inherited::net_Destroy(); }
 void CTacti1::UpdateCL() { inherited::UpdateCL(); }

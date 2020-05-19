@@ -9,7 +9,7 @@
 
 CMuzzle::CMuzzle() {}
 CMuzzle::~CMuzzle() {}
-BOOL CMuzzle::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
+bool CMuzzle::net_Spawn(CSE_Abstract* DC) { return (inherited::net_Spawn(DC)); }
 void CMuzzle::Load(LPCSTR section) { inherited::Load(section); }
 void CMuzzle::net_Destroy() { inherited::net_Destroy(); }
 void CMuzzle::UpdateCL() { inherited::UpdateCL(); }
